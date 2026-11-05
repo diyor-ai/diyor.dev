@@ -5,7 +5,11 @@ import { getT, localePath, type Lang } from '../i18n/utils';
 import { getPosts } from '../lib/content';
 const { lang } = Astro.props as { lang: Lang };
 const t = getT(lang);
-const posts = await getPosts(lang);
+const own = await getPosts(lang);
+// Posts not yet translated into this language are listed in English, with a label.
+const fallback = lang === 'en' ? [] : (await getPosts('en')).filter((p) => !own.some((o) => o.slug === p.slug));
+const posts = [...own.map((p) => ({ ...p, href: localePath(lang, `/blog/${p.slug}/`), fb: false })), ...fallback.map((p) => ({ ...p, href: localePath('en', `/blog/${p.slug}/`), fb: true }))]
+  .sort((a, b) => +b.data.date - +a.data.date);
 const fmt = new Intl.DateTimeFormat(t.htmlLang, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
 <section class="wrap page narrow">
@@ -18,8 +22,8 @@ const fmt = new Intl.DateTimeFormat(t.htmlLang, { year: 'numeric', month: 'long'
         {p.data.cover && <Image src={p.data.cover} alt={p.data.coverAlt} widths={[320, 480]} sizes="(max-width: 600px) 100vw, 240px" class="post-thumb" />}
         <div>
           <p class="muted mono">{fmt.format(p.data.date)}</p>
-          <h2><a href={localePath(lang, `/blog/${p.slug}/`)}>{p.data.title}</a></h2>
-          <p class="muted">{p.data.description}</p>
+          <h2><a href={p.href} lang={p.fb ? 'en' : undefined} hreflang={p.fb ? 'en' : undefined}>{p.data.title}</a>{p.fb && <span class="badge" lang="en">{t.blog.englishLabel}</span>}</h2>
+          <p class="muted" lang={p.fb ? 'en' : undefined}>{p.data.description}</p>
         </div>
       </li>
     ))}

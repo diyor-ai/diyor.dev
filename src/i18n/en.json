@@ -57,7 +57,7 @@
       "coursework": ["Intro to AI", "Machine Learning", "AI Ethics", "Calculus I–II", "Linear Algebra", "Probability & Statistics", "Discrete Math", "Circuits", "Physics", "Python OOP", "Robotics", "Digital Signal Processing"]
     }
   },
-  "blog": { "title": "Blog", "intro": "Notes on benchmarking and evaluation.", "empty": "No posts yet.", "back": "All posts", "rss": "RSS", "notTranslated": "This post is not available in this language." },
+  "blog": { "title": "Blog", "intro": "Notes on benchmarking and evaluation.", "empty": "No posts yet.", "back": "All posts", "rss": "RSS", "englishLabel": "English", "notTranslated": "This post is not available in this language." },
   "contact": {
     "title": "Contact", "intro": "Email is the best way to reach me.", "email": "Email", "copy": "Copy", "copied": "Copied", "github": "GitHub", "linkedin": "LinkedIn",
     "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "WeChat QR code", "upwork": "Upwork", "availability": "Available for internships, 24–30 h/week during the semester."

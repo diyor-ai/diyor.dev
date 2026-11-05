@@ -141,6 +141,7 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
 .post-item:has(.post-thumb) { grid-template-columns: 240px 1fr; }
 .post-thumb { width: 100%; height: auto; border-radius: var(--radius); }
 .post-item h2 { font-size: 1.25rem; margin: var(--s1) 0 var(--s2); } .post-item p { margin: 0; }
+.badge { margin-left: var(--s2); font: 600 12px/1 var(--mono); padding: 3px var(--s2); border: 1px solid var(--border); border-radius: 999px; color: var(--muted); vertical-align: middle; }
 .post-item h2 a { color: var(--text); text-decoration: none; } .post-item h2 a:hover { color: var(--accent); }
 
 /* contact */
