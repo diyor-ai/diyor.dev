@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Home from '../views/Home.astro';
+import Projects from '../views/Projects.astro';
+import ProjectDetail from '../views/ProjectDetail.astro';
+import Experience from '../views/Experience.astro';
+import BlogList from '../views/BlogList.astro';
+import BlogPost from '../views/BlogPost.astro';
+import Contact from '../views/Contact.astro';
+import { getT, locales, type Lang } from '../i18n/utils';
+import { getProjects, getPosts } from '../lib/content';
+import { SITE, GITHUB, LINKEDIN } from '../config';
+
+export async function getStaticPaths() {
+  const out: any[] = [];
+  const posts = await getPosts();
+  for (const lang of locales) {
+    const add = (slug: string | undefined, props: any) =>
+      out.push({ params: { slug: lang === 'en' ? slug : slug ? `${lang}/${slug}` : lang }, props: { lang, ...props } });
+    add(undefined, { view: 'home', path: '/' });
+    add('projects', { view: 'projects', path: '/projects/' });
+    for (const p of await getProjects(lang)) add(`projects/${p.slug}`, { view: 'project', path: `/projects/${p.slug}/`, entry: p });
+    add('experience', { view: 'experience', path: '/experience/' });
+    add('blog', { view: 'blogList', path: '/blog/' });
+    for (const p of posts.filter((x) => x.lang === lang)) {
+      const langs = posts.filter((x) => x.slug === p.slug).map((x) => x.lang);
+      add(`blog/${p.slug}`, { view: 'post', path: `/blog/${p.slug}/`, entry: p, langs });
+    }
+    add('contact', { view: 'contact', path: '/contact/' });
+  }
+  return out;
+}
+
+const { lang, view, path, entry, langs } = Astro.props;
+const t = getT(lang as Lang);
+const meta: Record<string, [string, string]> = {
+  home: [t.meta.homeTitle, t.meta.homeDesc],
+  projects: [t.meta.projectsTitle, t.meta.projectsDesc],
+  project: [entry?.data.title, entry?.data.summary],
+  experience: [t.meta.experienceTitle, t.meta.experienceDesc],
+  blogList: [t.meta.blogTitle, t.meta.blogDesc],
+  post: [entry?.data.title, entry?.data.description],
+  contact: [t.meta.contactTitle, t.meta.contactDesc],
+};
+const [title, description] = meta[view];
+const jsonLd = view === 'home' ? {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Mukhammaddiyor Abdulazimov', url: SITE,
+  sameAs: [GITHUB, LINKEDIN], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Harbin Engineering University' },
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'Harbin Engineering University' },
+  jobTitle: 'Artificial Intelligence student',
+} : undefined;
+---
+<Base lang={lang} title={title} description={description} path={path} langs={langs} jsonLd={jsonLd} type={view === 'post' ? 'article' : 'website'}>
+  {view === 'home' && <Home lang={lang} />}
+  {view === 'projects' && <Projects lang={lang} />}
+  {view === 'project' && <ProjectDetail lang={lang} entry={entry} />}
+  {view === 'experience' && <Experience lang={lang} />}
+  {view === 'blogList' && <BlogList lang={lang} />}
+  {view === 'post' && <BlogPost lang={lang} entry={entry} />}
+  {view === 'contact' && <Contact lang={lang} />}
+</Base>

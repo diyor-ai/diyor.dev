@@ -1,0 +1,68 @@
+{
+  "htmlLang": "zh-CN", "ogLocale": "zh_CN",
+  "nav": { "projects": "项目", "experience": "经历", "blog": "博客", "contact": "联系" },
+  "menu": "菜单", "theme": "切换浅色/深色主题", "skip": "跳到正文", "langLabel": "语言",
+  "meta": {
+    "homeTitle": "Mukhammaddiyor Abdulazimov · 人工智能专业学生，ML 推理与全栈",
+    "homeDesc": "哈尔滨工程大学人工智能专业学生。CPU 推理基准测试、可复现的机器学习评估，以及 2 年以上全栈开发经验。寻找实习机会。",
+    "projectsTitle": "项目", "projectsDesc": "CPU 推理基准测试、SST 基线、RoadAI 案例分析和手势控制系统，附精确数据与局限。",
+    "experienceTitle": "经历", "experienceDesc": "Kadirov.DEV 全栈学徒经历、个人项目以及哈尔滨工程大学的学习情况。",
+    "blogTitle": "博客", "blogDesc": "关于基准测试、评估与构建机器学习系统的笔记。",
+    "contactTitle": "联系", "contactDesc": "Mukhammaddiyor Abdulazimov 的邮箱、GitHub、LinkedIn 与微信。",
+    "notFoundTitle": "页面未找到"
+  },
+  "hero": {
+    "name": "Mukhammaddiyor Abdulazimov",
+    "headline": "哈尔滨工程大学人工智能专业学生 · ML 推理与全栈",
+    "intro": "哈尔滨工程大学人工智能专业（全英文授课）三年级学生。我对模型做 CPU 推理基准测试与量化，构建可复现的机器学习评估，并在真实客户项目中积累了 2 年以上的全栈开发经验。正在寻找 AI/ML 与全栈方向的实习机会。",
+    "cv": "下载简历", "projects": "查看项目", "contact": "联系我", "photoAlt": "Mukhammaddiyor Abdulazimov 的照片"
+  },
+  "social": { "github": "GitHub", "linkedin": "LinkedIn", "email": "邮箱" },
+  "featured": { "title": "精选项目", "all": "全部项目", "details": "详情", "repo": "GitHub" },
+  "skills": {
+    "title": "技能",
+    "groups": [
+      { "name": "ML 与推理", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 量化", "MediaPipe", "OpenCV"] },
+      { "name": "数据与评估", "items": ["配对 Bootstrap", "McNemar 检验", "嵌套交叉验证", "岭回归", "性能分析"] },
+      { "name": "全栈", "items": ["Python", "FastAPI", "React", "Flutter", "PostgreSQL"] },
+      { "name": "工具", "items": ["Git", "GitHub", "CI", "Claude Code"] }
+    ]
+  },
+  "projectsPage": {
+    "title": "项目", "intro": "四个精选项目，包含实测结果与局限，另有若干小项目。", "other": "其他项目", "back": "全部项目",
+    "repoLabel": "代码仓库", "otherLink": "GitHub",
+    "otherItems": [
+      { "title": "Ames House Price", "summary": "使用嵌套交叉验证、避免数据泄漏的房价预测。测试集中误差最大的 10 套房子占平方对数误差的 49%。", "stats": "测试 MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
+      { "title": "Pro-Bot", "summary": "支持 3 种语言的 Telegram 商店机器人，以 Google Sheets 作为数据库。", "stats": "82 个测试 · CI", "repo": "https://github.com/diyor-ai/pro-bot" }
+    ]
+  },
+  "experience": {
+    "title": "经历", "intro": "工作、项目与学习。", "education": "教育背景", "liveLink": "在线网站",
+    "items": [
+      { "period": "2026 年 9 月 – 至今", "title": "RoadAI", "org": "个人项目", "text": "带有 AI 单据信息提取功能的接送运营平台。需求规格、架构、代码审查和真机测试由我负责；大部分代码由 Claude Code 编写。", "links": [{ "label": "案例分析", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
+      { "period": "2023 年 3 月 – 2025 年 8 月（2024 年 9 月起远程兼职）", "title": "全栈学徒", "org": "Kadirov.DEV", "text": "学徒制，参与付费客户项目。在真实客户项目中积累了 2 年以上的全栈开发经验。",
+        "projects": [
+          { "name": "养殖场管理系统", "role": "后端与前端", "url": null },
+          { "name": "Boshqar.com", "role": "前端", "url": null },
+          { "name": "AstraCode", "role": "前端与后端", "url": null },
+          { "name": "带二维码验证的证书平台", "role": "", "url": null }
+        ] },
+      { "period": "2022 年 11 月 – 2023 年 12 月", "title": "编程课程", "org": "Kadirov.Dev", "text": "获得结业证书。2022 年开始学习编程。" }
+    ],
+    "edu": {
+      "school": "哈尔滨工程大学（HEU）", "program": "人工智能（全英文授课）", "period": "2024 年 9 月 – 2028 年 6 月（三年级）",
+      "degree": "TODO(diyor): 学位名称",
+      "points": ["2024 级人工智能班班长。", "在哈尔滨工程大学 2026 年文化节上负责乌兹别克斯坦展示。", "勤学守纪奖，2024–2025 学年秋季学期，哈尔滨工程大学国际合作教育学院（2025 年 2 月）。"],
+      "courseworkTitle": "主要课程",
+      "coursework": ["人工智能导论", "机器学习", "人工智能伦理", "微积分 I–II", "线性代数", "概率与统计", "离散数学", "电路", "物理", "Python 面向对象编程", "机器人学", "数字信号处理"]
+    }
+  },
+  "blog": { "title": "博客", "intro": "关于基准测试与评估的笔记。", "empty": "暂无文章。", "back": "全部文章", "rss": "RSS", "notTranslated": "本文暂无此语言版本。" },
+  "contact": {
+    "title": "联系", "intro": "最快的联系方式是邮件。", "email": "邮箱", "copy": "复制", "copied": "已复制", "github": "GitHub", "linkedin": "LinkedIn",
+    "wechat": "微信", "wechatId": "微信号", "qrAlt": "微信二维码", "upwork": "Upwork", "availability": "可实习，学期内每周 24–30 小时。"
+  },
+  "notFound": { "title": "页面未找到", "text": "该页面不存在。", "home": "返回首页" },
+  "footer": "Mukhammaddiyor Abdulazimov · 中国哈尔滨",
+  "ai": "代码由 Claude Code 编写；方法设计、决策与结果验证由我本人完成。"
+}

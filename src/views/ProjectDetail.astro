@@ -1,0 +1,18 @@
+---
+import { render } from 'astro:content';
+import Icon from '../components/Icon.astro';
+import { getT, localePath, type Lang } from '../i18n/utils';
+const { lang, entry } = Astro.props as { lang: Lang; entry: any };
+const t = getT(lang);
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<article class="wrap page narrow">
+  <p class="crumb"><a href={localePath(lang, '/projects/')}>← {t.projectsPage.back}</a></p>
+  <h1>{d.title}</h1>
+  <p class="lead">{d.summary}</p>
+  <ul class="metrics inline">{d.stats.map(([n, l]: string[]) => <li><strong>{n}</strong><span>{l}</span></li>)}</ul>
+  <ul class="tags">{d.tags.map((x: string) => <li>{x}</li>)}</ul>
+  <p class="actions-row"><a class="btn" href={d.repo} rel="noopener"><Icon name="github" />{d.repoLabel ?? t.projectsPage.repoLabel}</a></p>
+  <div class="prose"><Content /></div>
+</article>

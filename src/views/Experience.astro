@@ -1,0 +1,40 @@
+---
+import Icon from '../components/Icon.astro';
+import { getT, type Lang } from '../i18n/utils';
+const { lang } = Astro.props as { lang: Lang };
+const t = getT(lang);
+const x = t.experience;
+---
+<section class="wrap page narrow">
+  <h1>{x.title}</h1>
+  <p class="lead">{x.intro}</p>
+  <ol class="timeline">
+    {x.items.map((it: any) => (
+      <li>
+        <p class="period mono">{it.period}</p>
+        <h2>{it.title} <span class="org">· {it.org}</span></h2>
+        <p>{it.text}</p>
+        {it.projects && (
+          <ul class="plain">
+            {it.projects.map((p: any) => (
+              <li>
+                {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : <span>{p.name}</span>}
+                {p.role && <span class="muted"> — {p.role}</span>}
+                {p.url ? <span class="muted"> ({x.liveLink})</span> : <Fragment set:html="<!-- TODO(diyor): live URL -->" />}
+              </li>
+            ))}
+          </ul>
+        )}
+        {it.links && <p>{it.links.map((l: any) => <a href={l.url} rel="noopener">{l.label}<Icon name="arrow" /></a>)}</p>}
+      </li>
+    ))}
+    <li>
+      <p class="period mono">{x.edu.period}</p>
+      <h2>{x.edu.school}</h2>
+      <p>{x.edu.program}. {x.edu.degree}</p>
+      <ul class="plain">{x.edu.points.map((p: string) => <li>{p}</li>)}</ul>
+      <h3 class="sub">{x.edu.courseworkTitle}</h3>
+      <ul class="tags">{x.edu.coursework.map((c: string) => <li>{c}</li>)}</ul>
+    </li>
+  </ol>
+</section>

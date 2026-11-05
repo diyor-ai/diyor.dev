@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../assets/photo.jpg';
+import HandMotif from '../components/HandMotif.astro';
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getT, localePath, type Lang } from '../i18n/utils';
+import { getProjects } from '../lib/content';
+import { SHOW_CV, CV_FILES, GITHUB, LINKEDIN, EMAIL } from '../config';
+const { lang } = Astro.props as { lang: Lang };
+const t = getT(lang);
+const projects = await getProjects(lang);
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <HandMotif />
+    <Image class="photo" src={photo} alt={t.hero.photoAlt} width={440} height={660} format="webp" quality={70} loading="eager" densities={[1]} />
+    <div class="hero-text">
+      <h1>{t.hero.name}</h1>
+      <p class="headline">{t.hero.headline}</p>
+      <p class="intro">{t.hero.intro}</p>
+      <div class="actions">
+        {SHOW_CV && <a class="btn primary" href={CV_FILES[lang]} download><Icon name="download" />{t.hero.cv}</a>}
+        <a class={SHOW_CV ? 'btn' : 'btn primary'} href={localePath(lang, '/projects/')}>{t.hero.projects}</a>
+        <a class="btn" href={localePath(lang, '/contact/')}>{t.hero.contact}</a>
+      </div>
+      <ul class="social">
+        <li><a href={GITHUB} rel="me noopener"><Icon name="github" /><span>{t.social.github}</span></a></li>
+        <li><a href={LINKEDIN} rel="me noopener"><Icon name="linkedin" /><span>{t.social.linkedin}</span></a></li>
+        <li><a href={`mailto:${EMAIL}`}><Icon name="mail" /><span>{t.social.email}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap block">
+  <div class="block-head"><h2>{t.featured.title}</h2><a href={localePath(lang, '/projects/')}>{t.featured.all}<Icon name="arrow" /></a></div>
+  <div class="cards">
+    {projects.map((p) => <ProjectCard lang={lang} slug={p.slug} {...p.data} />)}
+  </div>
+</section>
+
+<section class="wrap block">
+  <h2>{t.skills.title}</h2>
+  <div class="skills">
+    {t.skills.groups.map((g) => (
+      <div><h3>{g.name}</h3><ul class="tags">{g.items.map((x) => <li>{x}</li>)}</ul></div>
+    ))}
+  </div>
+</section>

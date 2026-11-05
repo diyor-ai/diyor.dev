@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import qr from '../assets/wechat-qr.png';
+import Icon from '../components/Icon.astro';
+import { getT, type Lang } from '../i18n/utils';
+import { EMAIL, GITHUB, LINKEDIN, WECHAT_ID, UPWORK } from '../config';
+const { lang } = Astro.props as { lang: Lang };
+const t = getT(lang);
+const c = t.contact;
+---
+<section class="wrap page narrow">
+  <h1>{c.title}</h1>
+  <p class="lead">{c.intro} {c.availability}</p>
+  <ul class="contact-list">
+    <li>
+      <Icon name="mail" /><span class="label">{c.email}</span>
+      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      <button type="button" class="btn small" id="copy-email" data-email={EMAIL} data-copied={c.copied}><Icon name="copy" /><span>{c.copy}</span></button>
+    </li>
+    <li><Icon name="github" /><span class="label">{c.github}</span><a href={GITHUB} rel="me noopener">github.com/diyor-ai</a></li>
+    <li><Icon name="linkedin" /><span class="label">{c.linkedin}</span><a href={LINKEDIN} rel="me noopener">linkedin.com/in/muhammaddiyorabdulazimov</a></li>
+    <li><Icon name="wechat" /><span class="label">{c.wechatId}</span><span class="mono">{WECHAT_ID}</span></li>
+    {UPWORK && <li><span class="label">{c.upwork}</span><a href={UPWORK} rel="noopener">{UPWORK}</a></li>}
+  </ul>
+  <figure class="qr">
+    <Image src={qr} alt={c.qrAlt} width={320} height={320} format="webp" quality={85} densities={[1]} />
+    <figcaption class="muted">{c.wechat}: {WECHAT_ID}</figcaption>
+  </figure>
+</section>
+<script>
+  const b = document.getElementById('copy-email');
+  b?.addEventListener('click', async () => {
+    const label = b.querySelector('span')!;
+    const old = label.textContent;
+    try { await navigator.clipboard.writeText(b.dataset.email!); label.textContent = b.dataset.copied!; setTimeout(() => (label.textContent = old), 1800); } catch { window.location.href = 'mailto:' + b.dataset.email; }
+  });
+</script>

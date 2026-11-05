@@ -1,25 +1,24 @@
 {
+  "htmlLang": "en", "ogLocale": "en_US",
   "nav": { "projects": "Projects", "experience": "Experience", "blog": "Blog", "contact": "Contact" },
-  "theme": "Toggle theme",
+  "menu": "Menu", "theme": "Toggle light/dark theme", "skip": "Skip to content", "langLabel": "Language",
+  "meta": {
+    "homeTitle": "Mukhammaddiyor Abdulazimov · AI student, ML inference & full-stack",
+    "homeDesc": "AI student at Harbin Engineering University. CPU inference benchmarks, reproducible ML evaluations and 2+ years of full-stack work. Open to internships.",
+    "projectsTitle": "Projects", "projectsDesc": "CPU inference benchmark, SST baselines, RoadAI case study and a gesture-control system, with exact numbers and limitations.",
+    "experienceTitle": "Experience", "experienceDesc": "Full-stack apprenticeship at Kadirov.DEV, independent projects, and studies at Harbin Engineering University.",
+    "blogTitle": "Blog", "blogDesc": "Notes on benchmarking, evaluation and building ML systems.",
+    "contactTitle": "Contact", "contactDesc": "Email, GitHub, LinkedIn and WeChat for Mukhammaddiyor Abdulazimov.",
+    "notFoundTitle": "Page not found"
+  },
   "hero": {
     "name": "Mukhammaddiyor Abdulazimov",
     "headline": "AI student at Harbin Engineering University · ML inference & full-stack",
     "intro": "3rd-year Artificial Intelligence student (English-taught) at Harbin Engineering University. I benchmark and quantize models for CPU inference, build reproducible ML evaluations, and have 2+ years of full-stack experience on real client projects. Open to AI/ML and full-stack internships.",
-    "cv": "Download CV",
-    "projects": "View projects",
-    "contact": "Contact"
+    "cv": "Download CV", "projects": "View projects", "contact": "Contact", "photoAlt": "Portrait of Mukhammaddiyor Abdulazimov"
   },
-  "featured": {
-    "title": "Featured projects",
-    "all": "All projects",
-    "details": "Details",
-    "items": [
-      { "slug": "cpu-inference-bench", "title": "CPU Inference Benchmark", "summary": "PyTorch vs ONNX Runtime vs OpenVINO on CPU, FP32 vs INT8, with a controlled method.", "stats": [["3.48×", "OpenVINO INT8 vs FP32, ResNet-18, batch 1"], ["2.6 ms", "OpenVINO INT8 latency"]], "tags": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF"], "repo": "https://github.com/diyor-ai/cpu-inference-bench" },
-      { "slug": "sst-baselines", "title": "SST Baselines", "summary": "Baselines and a reproducible evaluation for daily sea surface temperature, NOAA OISST, two Pacific regions.", "stats": [["6", "baselines"], ["40", "tests"]], "tags": ["Python", "NOAA OISST", "Ridge regression"], "repo": "https://github.com/diyor-ai/sst-baselines" },
-      { "slug": "roadai", "title": "RoadAI", "summary": "TODO(diyor): one-line description of what RoadAI does.", "stats": [["646", "automated checks"]], "tags": ["FastAPI", "Flutter", "React", "PostgreSQL"], "repo": "https://github.com/diyor-ai/roadai-case-study", "repoLabel": "Case study (app code is private)" },
-      { "slug": "gesture-control", "title": "Gesture Control", "summary": "Hand-tracking control of the computer through a webcam.", "stats": [["29.9 FPS", "camera + tracking, CPU"], ["228", "tests"]], "tags": ["MediaPipe", "OpenCV", "Python"], "repo": "https://github.com/diyor-ai/gesture-control-system" }
-    ]
-  },
+  "social": { "github": "GitHub", "linkedin": "LinkedIn", "email": "Email" },
+  "featured": { "title": "Featured projects", "all": "All projects", "details": "Details", "repo": "GitHub" },
   "skills": {
     "title": "Skills",
     "groups": [
@@ -29,5 +28,41 @@
       { "name": "Tools", "items": ["Git", "GitHub", "CI", "Claude Code"] }
     ]
   },
-  "footer": "Mukhammaddiyor Abdulazimov · Harbin, China"
+  "projectsPage": {
+    "title": "Projects", "intro": "Four featured projects with measured results and their limits, plus smaller ones.", "other": "Other projects", "back": "All projects",
+    "repoLabel": "Repository", "otherLink": "GitHub",
+    "otherItems": [
+      { "title": "Ames House Price", "summary": "Leakage-safe price prediction with nested cross-validation. The worst 10 test houses account for 49% of the squared log error.", "stats": "Test MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
+      { "title": "Pro-Bot", "summary": "Telegram shop bot in 3 languages with Google Sheets as the database.", "stats": "82 tests · CI", "repo": "https://github.com/diyor-ai/pro-bot" }
+    ]
+  },
+  "experience": {
+    "title": "Experience", "intro": "Work, projects and studies.", "education": "Education", "liveLink": "Live site",
+    "items": [
+      { "period": "Sep 2026 – present", "title": "RoadAI", "org": "Independent project", "text": "Transfer-operations platform with AI voucher extraction. Specifications, architecture, code review and on-device testing are mine; most code was written with Claude Code.", "links": [{ "label": "Case study", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
+      { "period": "Mar 2023 – Aug 2025 (remote part-time from Sep 2024)", "title": "Full-stack apprenticeship", "org": "Kadirov.DEV", "text": "Apprenticeship with work on paid client projects. 2+ years of full-stack experience on real client projects.",
+        "projects": [
+          { "name": "Poultry farm management system", "role": "Backend and frontend", "url": null },
+          { "name": "Boshqar.com", "role": "Frontend", "url": null },
+          { "name": "AstraCode", "role": "Frontend and backend", "url": null },
+          { "name": "Certificate platform with QR verification", "role": "", "url": null }
+        ] },
+      { "period": "Nov 2022 – Dec 2023", "title": "Programming courses", "org": "Kadirov.Dev", "text": "Certificate course. Coding since 2022." }
+    ],
+    "edu": {
+      "school": "Harbin Engineering University (HEU)", "program": "Artificial Intelligence, English-taught", "period": "Sep 2024 – Jun 2028 (3rd year)",
+      "degree": "TODO(diyor): degree name",
+      "points": ["Class monitor of the 2024 AI class.", "Led Uzbekistan's presentation at the HEU Cultural Festival 2026.", "Discipline Award (勤学守纪奖), Autumn 2024–2025, College of International Cooperative Education, HEU (Feb 2025)."],
+      "courseworkTitle": "Coursework",
+      "coursework": ["Intro to AI", "Machine Learning", "AI Ethics", "Calculus I–II", "Linear Algebra", "Probability & Statistics", "Discrete Math", "Circuits", "Physics", "Python OOP", "Robotics", "Digital Signal Processing"]
+    }
+  },
+  "blog": { "title": "Blog", "intro": "Notes on benchmarking and evaluation.", "empty": "No posts yet.", "back": "All posts", "rss": "RSS", "notTranslated": "This post is not available in this language." },
+  "contact": {
+    "title": "Contact", "intro": "Email is the best way to reach me.", "email": "Email", "copy": "Copy", "copied": "Copied", "github": "GitHub", "linkedin": "LinkedIn",
+    "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "WeChat QR code", "upwork": "Upwork", "availability": "Available for internships, 24–30 h/week during the semester."
+  },
+  "notFound": { "title": "Page not found", "text": "This page does not exist.", "home": "Go to home page" },
+  "footer": "Mukhammaddiyor Abdulazimov · Harbin, China",
+  "ai": "Code written with Claude Code; methodology, decisions and verification are mine."
 }

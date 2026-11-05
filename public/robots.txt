@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diyor.dev/sitemap-index.xml
