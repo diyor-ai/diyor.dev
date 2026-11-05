@@ -109,7 +109,7 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
 .row { display: flex; justify-content: space-between; gap: var(--s5); padding: var(--s5); }
 .row + .row { border-top: 1px solid var(--border); }
 .row h3 { font-size: 1.05rem; margin-bottom: var(--s1); } .row p { margin: 0; }
-.row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: var(--s2); font-size: 14px; white-space: nowrap; }
+.row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: var(--s2); font-size: 14px; max-width: 42%; text-align: right; }
 
 /* detail / prose */
 .actions-row { margin: var(--s4) 0 var(--s6); }
@@ -184,7 +184,7 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
   .actions { flex-direction: column; align-self: stretch; } .actions .btn { width: 100%; }
   .social { justify-content: center; }
   .block { padding-top: var(--s6); }
-  .row { flex-direction: column; } .row-meta { align-items: flex-start; white-space: normal; }
+  .row { flex-direction: column; } .row-meta { align-items: flex-start; max-width: none; text-align: left; }
   .post-item:has(.post-thumb) { grid-template-columns: 1fr; }
   .card { padding: var(--s4); }
   .page { padding-top: var(--s6); }
