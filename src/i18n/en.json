@@ -43,8 +43,8 @@
       { "period": "Mar 2023 – Aug 2025 (remote part-time from Sep 2024)", "title": "Full-stack apprenticeship", "org": "Kadirov.DEV", "text": "Apprenticeship with work on paid client projects. 2+ years of full-stack experience on real client projects.",
         "projects": [
           { "name": "Poultry farm management system", "role": "Backend and frontend", "url": null },
-          { "name": "Boshqar.com", "role": "Frontend", "url": null },
-          { "name": "AstraCode", "role": "Frontend and backend", "url": null },
+          { "name": "Boshqar.com", "role": "Frontend", "url": "https://boshqar.com/uz/promo" },
+          { "name": "AstraCode", "role": "Frontend and backend", "url": "https://astracode.ai/" },
           { "name": "Certificate platform with QR verification", "role": "", "url": null }
         ] },
       { "period": "Nov 2022 – Dec 2023", "title": "Programming courses", "org": "Kadirov.Dev", "text": "Certificate course. Coding since 2022." }

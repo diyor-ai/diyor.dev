@@ -43,8 +43,8 @@
       { "period": "мар 2023 – авг 2025 (удалённо, неполный день с сен 2024)", "title": "Full-stack стажировка", "org": "Kadirov.DEV", "text": "Стажировка с работой над оплачиваемыми клиентскими проектами. Более 2 лет full-stack опыта на реальных клиентских проектах.",
         "projects": [
           { "name": "Система управления птицефермой", "role": "Бэкенд и фронтенд", "url": null },
-          { "name": "Boshqar.com", "role": "Фронтенд", "url": null },
-          { "name": "AstraCode", "role": "Фронтенд и бэкенд", "url": null },
+          { "name": "Boshqar.com", "role": "Фронтенд", "url": "https://boshqar.com/uz/promo" },
+          { "name": "AstraCode", "role": "Фронтенд и бэкенд", "url": "https://astracode.ai/" },
           { "name": "Платформа сертификатов с проверкой по QR-коду", "role": "", "url": null }
         ] },
       { "period": "ноя 2022 – дек 2023", "title": "Курсы программирования", "org": "Kadirov.Dev", "text": "Курс с сертификатом. Программирую с 2022 года." }

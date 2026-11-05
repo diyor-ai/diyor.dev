@@ -43,8 +43,8 @@
       { "period": "2023 年 3 月 – 2025 年 8 月（2024 年 9 月起远程兼职）", "title": "全栈学徒", "org": "Kadirov.DEV", "text": "学徒制，参与付费客户项目。在真实客户项目中积累了 2 年以上的全栈开发经验。",
         "projects": [
           { "name": "养殖场管理系统", "role": "后端与前端", "url": null },
-          { "name": "Boshqar.com", "role": "前端", "url": null },
-          { "name": "AstraCode", "role": "前端与后端", "url": null },
+          { "name": "Boshqar.com", "role": "前端", "url": "https://boshqar.com/uz/promo" },
+          { "name": "AstraCode", "role": "前端与后端", "url": "https://astracode.ai/" },
           { "name": "带二维码验证的证书平台", "role": "", "url": null }
         ] },
       { "period": "2022 年 11 月 – 2023 年 12 月", "title": "编程课程", "org": "Kadirov.Dev", "text": "获得结业证书。2022 年开始学习编程。" }

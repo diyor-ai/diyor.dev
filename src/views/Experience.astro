@@ -18,9 +18,8 @@ const x = t.experience;
           <ul class="plain">
             {it.projects.map((p: any) => (
               <li>
-                {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : <span>{p.name}</span>}
+                {p.url ? <a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a> : <span>{p.name}</span>}
                 {p.role && <span class="muted"> — {p.role}</span>}
-                {p.url && <span class="muted"> ({x.liveLink})</span>}
               </li>
             ))}
           </ul>
