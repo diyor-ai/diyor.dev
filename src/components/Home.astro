@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../assets/photo.jpg';
+import HandMotif from './HandMotif.astro';
+import Icons from './Icons.astro';
+import t from '../i18n/en.json';
+---
+<section class="hero">
+  <HandMotif />
+  <div class="wrap hero-grid">
+    <Image class="photo" src={photo} alt="Portrait of Mukhammaddiyor Abdulazimov" width={240} height={240} format="webp" quality={72} loading="eager" />
+    <div>
+      <h1>{t.hero.name}</h1>
+      <p class="headline">{t.hero.headline}</p>
+      <p class="intro">{t.hero.intro}</p>
+      <div class="actions">
+        <!-- TODO(diyor): CV PDFs contain a phone number; supply a version without it -->
+        <a class="btn primary" href="/cv/cv-en.pdf" download>{t.hero.cv}</a>
+        <a class="btn" href="/projects/">{t.hero.projects}</a>
+        <a class="btn" href="/contact/">{t.hero.contact}</a>
+      </div>
+      <p class="social">
+        <a href="https://github.com/diyor-ai" aria-label="GitHub"><Icons name="github" /></a>
+        <a href="https://linkedin.com/in/muhammaddiyorabdulazimov" aria-label="LinkedIn"><Icons name="linkedin" /></a>
+        <a href="mailto:hi@diyor.dev" aria-label="Email"><Icons name="mail" /></a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap block">
+  <div class="block-head"><h2>{t.featured.title}</h2><a href="/projects/">{t.featured.all} →</a></div>
+  <div class="cards">
+    {t.featured.items.map((p) => (
+      <article class="card">
+        <h3>{p.title}</h3>
+        <p class="muted">{p.summary}</p>
+        <ul class="stats">{p.stats.map(([n, l]) => <li><strong>{n}</strong><span>{l}</span></li>)}</ul>
+        <ul class="tags">{p.tags.map((x) => <li>{x}</li>)}</ul>
+        <p class="links"><a href={`/projects/${p.slug}/`}>{t.featured.details}</a> · <a href={p.repo}>{p.repoLabel ?? 'GitHub'}</a></p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="wrap block">
+  <h2>{t.skills.title}</h2>
+  <div class="skills">
+    {t.skills.groups.map((g) => (
+      <div><h3>{g.name}</h3><ul class="tags">{g.items.map((x) => <li>{x}</li>)}</ul></div>
+    ))}
+  </div>
+</section>
