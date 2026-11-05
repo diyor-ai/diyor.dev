@@ -6,8 +6,6 @@ draft: true
 # cover: ./cover.jpg
 # coverAlt: Describe the image for screen readers
 ---
-<!-- TODO(diyor): the brief title said "48% noise". The repo README and results/archive_summary.json only support "12 of 18 repeated rows differed by more than 5%", so this draft uses that. Confirm the 48% figure or keep this wording. -->
-
 All numbers and claims below come from the README of [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench).
 
 ## The first attempt was invalid

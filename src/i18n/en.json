@@ -50,8 +50,8 @@
       { "period": "Nov 2022 – Dec 2023", "title": "Programming courses", "org": "Kadirov.Dev", "text": "Certificate course. Coding since 2022." }
     ],
     "edu": {
-      "school": "Harbin Engineering University (HEU)", "program": "Artificial Intelligence, English-taught", "period": "Sep 2024 – Jun 2028 (3rd year)",
-      "degree": "TODO(diyor): degree name",
+      "school": "Harbin Engineering University (HEU)", "program": "English-taught program", "period": "Sep 2024 – Jun 2028 (3rd year)",
+      "degree": "Bachelor's degree in Artificial Intelligence (expected Jun 2028)",
       "points": ["Class monitor of the 2024 AI class.", "Led Uzbekistan's presentation at the HEU Cultural Festival 2026.", "Discipline Award (勤学守纪奖), Autumn 2024–2025, College of International Cooperative Education, HEU (Feb 2025)."],
       "courseworkTitle": "Coursework",
       "coursework": ["Intro to AI", "Machine Learning", "AI Ethics", "Calculus I–II", "Linear Algebra", "Probability & Statistics", "Discrete Math", "Circuits", "Physics", "Python OOP", "Robotics", "Digital Signal Processing"]

@@ -20,7 +20,7 @@ const x = t.experience;
               <li>
                 {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : <span>{p.name}</span>}
                 {p.role && <span class="muted"> — {p.role}</span>}
-                {p.url ? <span class="muted"> ({x.liveLink})</span> : <Fragment set:html="<!-- TODO(diyor): live URL -->" />}
+                {p.url && <span class="muted"> ({x.liveLink})</span>}
               </li>
             ))}
           </ul>
