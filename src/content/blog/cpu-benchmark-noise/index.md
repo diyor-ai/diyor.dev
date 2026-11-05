@@ -8,11 +8,11 @@ draft: false
 ---
 My first benchmark numbers looked reasonable, until I ran the same thing twice and got different answers. This post is about how I found out why, and what I changed before trusting any number.
 
-All numbers come from the repo's README and `results/archive_summary.json` in [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench).
+All numbers come from the repo's README (including its "First attempt (archived)" section) and `results/archive_summary.json` in [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench).
 
 ## The first attempt was invalid
 
-I started by running ResNet-18 on PyTorch, ONNX Runtime and OpenVINO with default settings on a laptop CPU (Intel i7-12650H). To check repeatability I ran each configuration twice. In 12 of 18 repeated rows, the two identical runs differed by more than 5%. The results were not usable as a comparison, so I archived them.
+I started by running ResNet-18 on PyTorch, ONNX Runtime and OpenVINO with default settings on a laptop CPU (Intel i7-12650H). To check repeatability I ran each configuration twice. In 12 of 18 repeated rows, the two identical runs differed by more than 5%, up to 48% for one row (PyTorch, 12 threads, batch 1). The results were not usable as a comparison, so I archived them.
 
 A laptop has package power and thermal limits, so the clock changes during a run. Without control over that, a difference of a few percent between frameworks would be within the noise.
 
