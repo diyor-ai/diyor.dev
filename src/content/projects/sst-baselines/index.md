@@ -18,6 +18,10 @@ Fixed split: 1982–2015 for training, 2016–2019 for validation, 2020–2025 f
 ## Results
 Methods that pull toward climatology (damped persistence and Ridge) lost most of their validation advantage in the test years. This is consistent with a larger warm shift in the test period, but the cause is not proven.
 
+> “Good job.”
+>
+> — Associate Professor Green, on the baseline results
+
 ## Limitations
 - Only simple baselines. A learned model (LSTM) is the next step and is in progress; it is not part of the results here.
 - Two small regions, one dataset.

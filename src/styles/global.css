@@ -131,6 +131,8 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
 .prose img { height: auto; border-radius: var(--radius); display: block; margin: var(--s5) auto 0; }
 .prose p:has(> img) { margin: 0; }
 .prose p:has(> img) + p > em:only-child { display: block; text-align: center; font-size: 14px; color: var(--muted); font-style: normal; margin-top: var(--s2); }
+.prose blockquote { margin: var(--s5) 0 0; padding: var(--s1) 0 var(--s1) var(--s4); border-left: 2px solid var(--accent); color: var(--muted); font-size: .95rem; }
+.prose blockquote p { margin: 0; } .prose blockquote p + p { margin-top: var(--s1); font-size: 13.5px; }
 .prose code { font-family: var(--mono); font-size: .9em; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
 .prose pre { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s4); }
 .prose pre code { border: 0; padding: 0; background: none; }
