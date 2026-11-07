@@ -24,7 +24,8 @@
     "title": "Навыки",
     "groups": [
       { "name": "Языки и фреймворки", "items": ["Python", "FastAPI", "React", "Flutter"] },
-      { "name": "ML / AI", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8-квантизация", "MediaPipe", "OpenCV", "Парный бутстрэп", "Критерий Мак-Немара", "Вложенная кросс-валидация", "Ridge-регрессия", "Профилирование"] },
+      { "name": "ML / AI", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8-квантизация", "MediaPipe", "OpenCV"] },
+      { "name": "Данные и оценка", "items": ["Парный бутстрэп", "Критерий Мак-Немара", "Вложенная кросс-валидация", "Ridge-регрессия", "Профилирование"] },
       { "name": "Инструменты и платформы", "items": ["PostgreSQL", "Git", "GitHub", "CI", "Claude Code"] }
     ]
   },
