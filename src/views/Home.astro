@@ -44,7 +44,7 @@ const projects = await getProjects(lang);
   <h2>{t.skills.title}</h2>
   <div class="skills">
     {t.skills.groups.map((g) => (
-      <div><h3>{g.name}</h3><ul class="tags">{g.items.map((x) => <li>{x}</li>)}</ul></div>
+      <section class="skill-card"><h3>{g.name}</h3><ul class="tags">{g.items.map((x) => <li>{x}</li>)}</ul></section>
     ))}
   </div>
 </section>

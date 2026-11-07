@@ -23,10 +23,9 @@
   "skills": {
     "title": "技能",
     "groups": [
-      { "name": "ML 与推理", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 量化", "MediaPipe", "OpenCV"] },
-      { "name": "数据与评估", "items": ["配对 Bootstrap", "McNemar 检验", "嵌套交叉验证", "岭回归", "性能分析"] },
-      { "name": "全栈", "items": ["Python", "FastAPI", "React", "Flutter", "PostgreSQL"] },
-      { "name": "工具", "items": ["Git", "GitHub", "CI", "Claude Code"] }
+      { "name": "语言与框架", "items": ["Python", "FastAPI", "React", "Flutter"] },
+      { "name": "ML / AI", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 量化", "MediaPipe", "OpenCV", "配对 Bootstrap", "McNemar 检验", "嵌套交叉验证", "岭回归", "性能分析"] },
+      { "name": "工具与平台", "items": ["PostgreSQL", "Git", "GitHub", "CI", "Claude Code"] }
     ]
   },
   "projectsPage": {

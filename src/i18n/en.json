@@ -23,10 +23,9 @@
   "skills": {
     "title": "Skills",
     "groups": [
-      { "name": "ML & inference", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 quantization", "MediaPipe", "OpenCV"] },
-      { "name": "Data & evaluation", "items": ["Paired bootstrap", "McNemar test", "Nested cross-validation", "Ridge regression", "Profiling"] },
-      { "name": "Full-stack", "items": ["Python", "FastAPI", "React", "Flutter", "PostgreSQL"] },
-      { "name": "Tools", "items": ["Git", "GitHub", "CI", "Claude Code"] }
+      { "name": "Languages & Frameworks", "items": ["Python", "FastAPI", "React", "Flutter"] },
+      { "name": "ML / AI", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 quantization", "MediaPipe", "OpenCV", "Paired bootstrap", "McNemar test", "Nested cross-validation", "Ridge regression", "Profiling"] },
+      { "name": "Tools & Platforms", "items": ["PostgreSQL", "Git", "GitHub", "CI", "Claude Code"] }
     ]
   },
   "projectsPage": {
