@@ -31,7 +31,7 @@
   },
   "projectsPage": {
     "title": "Projects", "intro": "Four featured projects with measured results and their limits, plus smaller ones.", "other": "Other projects", "back": "All projects",
-    "repoLabel": "Repository", "otherLink": "GitHub",
+    "updated": "Updated {x}", "repoLabel": "Repository", "otherLink": "GitHub",
     "otherItems": [
       { "title": "Ames House Price", "summary": "Leakage-safe price prediction with nested cross-validation. The worst 10 test houses account for 49% of the squared log error.", "stats": "Test MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
       { "title": "Pro-Bot", "summary": "Telegram shop bot in 3 languages with Google Sheets as the database.", "stats": "82 tests · CI", "repo": "https://github.com/diyor-ai/pro-bot" }

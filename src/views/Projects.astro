@@ -3,9 +3,11 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Icon from '../components/Icon.astro';
 import { getT, type Lang } from '../i18n/utils';
 import { getProjects } from '../lib/content';
+import { repoUpdated, relativeTime } from '../lib/github';
 const { lang } = Astro.props as { lang: Lang };
 const t = getT(lang);
 const projects = await getProjects(lang);
+const others = await Promise.all(t.projectsPage.otherItems.map(async (o) => ({ ...o, updated: await repoUpdated(o.repo) })));
 ---
 <section class="wrap page">
   <h1>{t.projectsPage.title}</h1>
@@ -14,10 +16,10 @@ const projects = await getProjects(lang);
   <div class="cards">{projects.map((p) => <ProjectCard lang={lang} slug={p.slug} {...p.data} />)}</div>
   <h2 class="mt">{t.projectsPage.other}</h2>
   <ul class="rows">
-    {t.projectsPage.otherItems.map((o) => (
+    {others.map((o) => (
       <li class="row">
         <div><h3>{o.title}</h3><p class="muted">{o.summary}</p></div>
-        <p class="row-meta"><span class="mono">{o.stats}</span><a href={o.repo} rel="noopener"><Icon name="github" /><span>{t.projectsPage.otherLink}</span></a></p>
+        <p class="row-meta"><span class="mono">{o.stats}</span>{o.updated && <time class="updated muted" datetime={o.updated} title={o.updated.slice(0, 10)}>{t.projectsPage.updated.replace('{x}', relativeTime(o.updated, lang))}</time>}<a href={o.repo} rel="noopener"><Icon name="github" /><span>{t.projectsPage.otherLink}</span></a></p>
       </li>
     ))}
   </ul>

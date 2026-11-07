@@ -31,7 +31,7 @@
   },
   "projectsPage": {
     "title": "项目", "intro": "四个精选项目，包含实测结果与局限，另有若干小项目。", "other": "其他项目", "back": "全部项目",
-    "repoLabel": "代码仓库", "otherLink": "GitHub",
+    "updated": "更新于{x}", "repoLabel": "代码仓库", "otherLink": "GitHub",
     "otherItems": [
       { "title": "Ames House Price", "summary": "使用嵌套交叉验证、避免数据泄漏的房价预测。测试集中误差最大的 10 套房子占平方对数误差的 49%。", "stats": "测试 MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
       { "title": "Pro-Bot", "summary": "支持 3 种语言的 Telegram 商店机器人，以 Google Sheets 作为数据库。", "stats": "82 个测试 · CI", "repo": "https://github.com/diyor-ai/pro-bot" }

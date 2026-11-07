@@ -31,7 +31,7 @@
   },
   "projectsPage": {
     "title": "Проекты", "intro": "Четыре избранных проекта с измеренными результатами и их ограничениями, а также небольшие проекты.", "other": "Другие проекты", "back": "Все проекты",
-    "repoLabel": "Репозиторий", "otherLink": "GitHub",
+    "updated": "Обновлено: {x}", "repoLabel": "Репозиторий", "otherLink": "GitHub",
     "otherItems": [
       { "title": "Ames House Price", "summary": "Предсказание цен на жильё без утечки данных, с вложенной кросс-валидацией. 10 худших домов в тесте дают 49% квадратичной логарифмической ошибки.", "stats": "MAE на тесте $16,391 · R² 0,875 · RMSLE 0,136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
       { "title": "Pro-Bot", "summary": "Telegram-бот магазина на 3 языках, Google Sheets в роли базы данных.", "stats": "82 теста · CI", "repo": "https://github.com/diyor-ai/pro-bot" }
