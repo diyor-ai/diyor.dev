@@ -2,12 +2,12 @@
 import '../styles/global.css';
 import { getT, locales, hreflangOf, labelOf, localePath, type Lang } from '../i18n/utils';
 import { SITE } from '../config';
-interface Props { lang: Lang; title: string; description: string; path: string; langs?: Lang[]; jsonLd?: object; type?: string; rss?: boolean }
-const { lang, title, description, path, langs = [...locales], jsonLd, type = 'website', rss = true } = Astro.props;
+interface Props { lang: Lang; title: string; description: string; path: string; langs?: Lang[]; jsonLd?: object; type?: string; rss?: boolean; ogPath?: string }
+const { lang, title, description, path, langs = [...locales], jsonLd, type = 'website', rss = true, ogPath = '/og.png' } = Astro.props;
 const t = getT(lang);
 const fullTitle = path === '/' ? title : `${title} · diyor.dev`;
 const url = SITE + localePath(lang, path);
-const ogImage = SITE + '/og.png';
+const ogImage = SITE + ogPath;
 const nav = [['projects', '/projects/'], ['experience', '/experience/'], ['blog', '/blog/'], ['contact', '/contact/']] as const;
 const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p));
 ---

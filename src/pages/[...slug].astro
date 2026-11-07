@@ -53,7 +53,7 @@ const jsonLd = view === 'home' ? {
   jobTitle: 'Artificial Intelligence student',
 } : undefined;
 ---
-<Base lang={lang} title={title} description={description} path={path} langs={langs} jsonLd={jsonLd} type={view === 'post' ? 'article' : 'website'}>
+<Base lang={lang} title={title} description={description} path={path} langs={langs} jsonLd={jsonLd} type={view === 'post' ? 'article' : 'website'} ogPath={view === 'project' ? `/og/${entry.slug}.png` : undefined}>
   {view === 'home' && <Home lang={lang} />}
   {view === 'projects' && <Projects lang={lang} />}
   {view === 'project' && <ProjectDetail lang={lang} entry={entry} />}
