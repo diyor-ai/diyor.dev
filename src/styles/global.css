@@ -201,3 +201,14 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
 .contact-list .label { min-width: 0; flex-basis: calc(100% - 40px); }
 }
 @media (prefers-reduced-motion: reduce) { .motif circle { animation: none; } * { scroll-behavior: auto !important; transition: none !important; } }
+
+/* hand-written SVG bar chart (CPU benchmark page): site tokens only, labels carry the values */
+.prose .chart-fig { margin: var(--s5) 0 0; max-width: 460px; }
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { font-family: var(--font); fill: var(--text); font-size: 14px; }
+.chart .c-label { fill: var(--muted); }
+.chart .c-val { font-family: var(--mono); font-weight: 700; font-size: 16px; }
+.chart .c-bar { fill: var(--accent); }
+.chart .c-base { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.chart .c-note { fill: var(--muted); font-size: 12.5px; }
+.chart-fig figcaption { font-size: 13px; color: var(--muted); margin-top: var(--s3); }

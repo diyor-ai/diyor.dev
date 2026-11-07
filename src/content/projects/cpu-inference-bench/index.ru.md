@@ -21,6 +21,23 @@ repo: https://github.com/diyor-ai/cpu-inference-bench
 - Изменение top-1 для ResNet-18: от −0,6 до −0,9 п.п., статистически незначимо на 1000 изображениях.
 - DistilBERT и BERT-mini (SST-2): INT8 быстрее в **1,10–3,12×**. Различия в точности незначимы после поправки Бонферрони.
 
+<figure class="chart-fig">
+<svg class="chart" viewBox="0 0 360 214" role="img" aria-label="ResNet-18, batch 1, ускорение INT8 относительно FP32 (больше — лучше): PyTorch 2,34×; ONNX Runtime 2,74×; OpenVINO 3,48×">
+<text class="c-label" x="0" y="16">PyTorch</text>
+<rect class="c-bar" x="0" y="24" width="180.5" height="26" rx="4"/>
+<text class="c-val" x="188.5" y="43">2,34×</text>
+<text class="c-label" x="0" y="78">ONNX Runtime</text>
+<rect class="c-bar" x="0" y="86" width="211.4" height="26" rx="4"/>
+<text class="c-val" x="219.4" y="105">2,74×</text>
+<text class="c-label" x="0" y="140">OpenVINO</text>
+<rect class="c-bar" x="0" y="148" width="268.5" height="26" rx="4"/>
+<text class="c-val" x="276.5" y="167">3,48×</text>
+<line class="c-base" x1="77.1" y1="20" x2="77.1" y2="186"/>
+<text class="c-note" x="83.1" y="206">FP32 = 1×</text>
+</svg>
+<figcaption>ResNet-18, batch 1, ускорение INT8 относительно FP32 (больше — лучше)</figcaption>
+</figure>
+
 ## Ограничения
 - Сравниваются стандартные INT8-пути каждого фреймворка, а не идентичная квантизация. Например, в BERT OpenVINO дополнительно квантизует MatMul в блоках внимания.
 - Причину ускорения (например, VNNI) я не проверял; по названиям ядер это не определить.

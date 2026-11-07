@@ -20,6 +20,23 @@ My first, uncontrolled attempt was invalid: 12 of 18 repeated rows differed by m
 - ResNet-18 top-1 change: −0.6 to −0.9 points, not statistically significant on 1000 images.
 - DistilBERT and BERT-mini (SST-2): INT8 was **1.10–3.12×** faster. Accuracy differences are not significant after Bonferroni correction.
 
+<figure class="chart-fig">
+<svg class="chart" viewBox="0 0 360 214" role="img" aria-label="ResNet-18, INT8 speedup over FP32, batch 1 (higher is better): PyTorch 2.34×; ONNX Runtime 2.74×; OpenVINO 3.48×">
+<text class="c-label" x="0" y="16">PyTorch</text>
+<rect class="c-bar" x="0" y="24" width="180.5" height="26" rx="4"/>
+<text class="c-val" x="188.5" y="43">2.34×</text>
+<text class="c-label" x="0" y="78">ONNX Runtime</text>
+<rect class="c-bar" x="0" y="86" width="211.4" height="26" rx="4"/>
+<text class="c-val" x="219.4" y="105">2.74×</text>
+<text class="c-label" x="0" y="140">OpenVINO</text>
+<rect class="c-bar" x="0" y="148" width="268.5" height="26" rx="4"/>
+<text class="c-val" x="276.5" y="167">3.48×</text>
+<line class="c-base" x1="77.1" y1="20" x2="77.1" y2="186"/>
+<text class="c-note" x="83.1" y="206">FP32 = 1×</text>
+</svg>
+<figcaption>ResNet-18, INT8 speedup over FP32, batch 1 (higher is better)</figcaption>
+</figure>
+
 ## Limitations
 - Each framework's standard INT8 path is compared, not identical quantization. In BERT, for example, OpenVINO also quantizes the attention MatMuls.
 - I did not verify the cause of the speedup (for example VNNI). Kernel names do not settle it.
