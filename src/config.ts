@@ -8,3 +8,5 @@ export const UPWORK: string | null = null;
 /** CV download button; files are phone-free copies in public/cv/. */
 export const SHOW_CV = true;
 export const CV_FILES: Record<string, string> = { en: '/cv/cv-en.pdf', zh: '/cv/cv-zh.pdf', ru: '/cv/cv-en.pdf' };
+/** Date shown on /now. Edit it by hand whenever the page content is actually updated. */
+export const NOW_UPDATED = '2026-11-07';

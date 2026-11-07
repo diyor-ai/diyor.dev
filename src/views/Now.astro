@@ -1,0 +1,12 @@
+---
+import { getT, localePath, type Lang } from '../i18n/utils';
+import { NOW_UPDATED } from '../config';
+const { lang } = Astro.props as { lang: Lang };
+const n = getT(lang).now;
+const sst = localePath(lang, '/projects/sst-baselines/');
+---
+<section class="wrap page narrow">
+  <h1>{n.title}</h1>
+  <p class="muted now-date">{n.updated} <time datetime={NOW_UPDATED}>{NOW_UPDATED}</time></p>
+  <ul class="now-list">{n.lines.map((l) => <li set:html={l.replace('{sst}', sst)} />)}</ul>
+</section>

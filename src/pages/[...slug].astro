@@ -7,6 +7,7 @@ import Experience from '../views/Experience.astro';
 import BlogList from '../views/BlogList.astro';
 import BlogPost from '../views/BlogPost.astro';
 import Contact from '../views/Contact.astro';
+import Now from '../views/Now.astro';
 import { getT, locales, type Lang } from '../i18n/utils';
 import { getProjects, getPosts } from '../lib/content';
 import { SITE, GITHUB, LINKEDIN } from '../config';
@@ -27,6 +28,7 @@ export async function getStaticPaths() {
       add(`blog/${p.slug}`, { view: 'post', path: `/blog/${p.slug}/`, entry: p, langs });
     }
     add('contact', { view: 'contact', path: '/contact/' });
+    add('now', { view: 'now', path: '/now/' });
   }
   return out;
 }
@@ -41,6 +43,7 @@ const meta: Record<string, [string, string]> = {
   blogList: [t.meta.blogTitle, t.meta.blogDesc],
   post: [entry?.data.title, entry?.data.description],
   contact: [t.meta.contactTitle, t.meta.contactDesc],
+  now: [t.meta.nowTitle, t.meta.nowDesc],
 };
 const [title, description] = meta[view];
 const jsonLd = view === 'home' ? {
@@ -58,4 +61,5 @@ const jsonLd = view === 'home' ? {
   {view === 'blogList' && <BlogList lang={lang} />}
   {view === 'post' && <BlogPost lang={lang} entry={entry} />}
   {view === 'contact' && <Contact lang={lang} />}
+  {view === 'now' && <Now lang={lang} />}
 </Base>

@@ -104,6 +104,12 @@ h2 { font-size: 1.45rem; margin-bottom: var(--s5); } .block-head h2 { margin: 0;
 .skills h3 { font-size: .85rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: var(--s3); }
 .skills .tags { margin: 0; }
 
+/* /now */
+.now-date { font-size: 14px; margin-bottom: var(--s5); }
+.now-list { padding-left: 1.2em; max-width: 62ch; font-size: 1.08rem; }
+.now-list li { margin-bottom: var(--s3); }
+.site-footer a { color: var(--muted); } .site-footer a:hover { color: var(--text); }
+
 /* rows (other projects) */
 .rows { list-style: none; padding: 0; margin: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
 .row { display: flex; justify-content: space-between; gap: var(--s5); padding: var(--s5); }

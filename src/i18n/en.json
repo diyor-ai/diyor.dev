@@ -9,6 +9,7 @@
     "experienceTitle": "Experience", "experienceDesc": "Full-stack apprenticeship at Kadirov.DEV, independent projects, and studies at Harbin Engineering University.",
     "blogTitle": "Blog", "blogDesc": "Notes on benchmarking, evaluation and building ML systems.",
     "contactTitle": "Contact", "contactDesc": "Email, GitHub, LinkedIn and WeChat for Mukhammaddiyor Abdulazimov.",
+    "nowTitle": "Now", "nowDesc": "What Mukhammaddiyor Abdulazimov is working on right now: studies, the SST Baselines LSTM step and the internship search.",
     "notFoundTitle": "Page not found"
   },
   "hero": {
@@ -62,6 +63,7 @@
     "title": "Contact", "intro": "Email is the best way to reach me.", "email": "Email", "copy": "Copy", "copied": "Copied", "github": "GitHub", "linkedin": "LinkedIn",
     "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "WeChat QR code", "upwork": "Upwork", "availability": "Available for internships, 24–30 h/week during the semester."
   },
+  "now": { "title": "Now", "updated": "Updated:", "lines": ["I'm a 3rd-year AI student at Harbin Engineering University (HEU), finishing this semester's coursework.", "I'm working on the next step of <a href=\"{sst}\">SST Baselines</a>, an LSTM model, now that the baseline results are in.", "I'm applying for AI/ML and full-stack internships.", "I'm open to remote work."] },
   "notFound": { "title": "Page not found", "text": "This page does not exist.", "home": "Go to home page" },
   "footer": "Mukhammaddiyor Abdulazimov · Harbin, China",
   "ai": "Code written with Claude Code; methodology, decisions and verification are mine."

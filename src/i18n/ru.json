@@ -9,6 +9,7 @@
     "experienceTitle": "Опыт", "experienceDesc": "Full-stack стажировка в Kadirov.DEV, собственные проекты и учёба в Харбинском инженерном университете.",
     "blogTitle": "Блог", "blogDesc": "Заметки о бенчмарках, оценке моделей и разработке ML-систем.",
     "contactTitle": "Контакты", "contactDesc": "Почта, GitHub, LinkedIn и WeChat Mukhammaddiyor Abdulazimov.",
+    "nowTitle": "Сейчас", "nowDesc": "Чем Mukhammaddiyor Abdulazimov занимается сейчас: учёба, LSTM-этап SST Baselines и поиск стажировки.",
     "notFoundTitle": "Страница не найдена"
   },
   "hero": {
@@ -62,6 +63,7 @@
     "title": "Контакты", "intro": "Быстрее всего со мной можно связаться по почте.", "email": "Почта", "copy": "Копировать", "copied": "Скопировано", "github": "GitHub", "linkedin": "LinkedIn",
     "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "QR-код WeChat", "upwork": "Upwork", "availability": "Доступен для стажировки, 24–30 часов в неделю в течение семестра."
   },
+  "now": { "title": "Сейчас", "updated": "Обновлено:", "lines": ["Я студент 3-го курса направления «Искусственный интеллект» в Харбинском инженерном университете (HEU), заканчиваю учебные задания этого семестра.", "После базовых результатов я работаю над следующим этапом <a href=\"{sst}\">SST Baselines</a>: LSTM-моделью.", "Подаю заявки на стажировки в AI/ML и full-stack.", "Открыт к удалённой работе."] },
   "notFound": { "title": "Страница не найдена", "text": "Такой страницы нет.", "home": "На главную" },
   "footer": "Mukhammaddiyor Abdulazimov · Харбин, Китай",
   "ai": "Код написан с помощью Claude Code; методология, решения и проверка результатов — мои."

@@ -9,6 +9,7 @@
     "experienceTitle": "经历", "experienceDesc": "Kadirov.DEV 全栈学徒经历、个人项目以及哈尔滨工程大学的学习情况。",
     "blogTitle": "博客", "blogDesc": "关于基准测试、评估与构建机器学习系统的笔记。",
     "contactTitle": "联系", "contactDesc": "Mukhammaddiyor Abdulazimov 的邮箱、GitHub、LinkedIn 与微信。",
+    "nowTitle": "现在", "nowDesc": "Mukhammaddiyor Abdulazimov 目前在做的事：学业、SST Baselines 的 LSTM 阶段，以及实习申请。",
     "notFoundTitle": "页面未找到"
   },
   "hero": {
@@ -62,6 +63,7 @@
     "title": "联系", "intro": "最快的联系方式是邮件。", "email": "邮箱", "copy": "复制", "copied": "已复制", "github": "GitHub", "linkedin": "LinkedIn",
     "wechat": "微信", "wechatId": "微信号", "qrAlt": "微信二维码", "upwork": "Upwork", "availability": "可实习，学期内每周 24–30 小时。"
   },
+  "now": { "title": "现在", "updated": "更新于：", "lines": ["我是哈尔滨工程大学（HEU）人工智能专业三年级学生，正在完成本学期的课程。", "基线结果出来之后，我正在做 <a href=\"{sst}\">SST Baselines</a> 的下一步：LSTM 模型。", "我正在申请 AI/ML 和全栈方向的实习。", "接受远程工作。"] },
   "notFound": { "title": "页面未找到", "text": "该页面不存在。", "home": "返回首页" },
   "footer": "Mukhammaddiyor Abdulazimov · 中国哈尔滨",
   "ai": "代码由 Claude Code 编写；方法设计、决策与结果验证由我本人完成。"
