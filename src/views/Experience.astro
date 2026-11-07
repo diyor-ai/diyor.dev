@@ -14,6 +14,7 @@ const x = t.experience;
         <p class="period mono">{it.period}</p>
         <h2>{it.title} <span class="org">· {it.org}</span></h2>
         <p>{it.text}</p>
+        {it.stack && <p class="stack muted"><span>{x.stackLabel}</span> {it.stack.join(', ')}</p>}
         {it.projects && (
           <ul class="plain">
             {it.projects.map((p: any) => (

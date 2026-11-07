@@ -38,10 +38,11 @@
     ]
   },
   "experience": {
-    "title": "经历", "intro": "工作、项目与学习。", "education": "教育背景", "liveLink": "在线网站",
+    "title": "经历", "intro": "工作、项目与学习。", "education": "教育背景", "stackLabel": "技术栈：", "liveLink": "在线网站",
     "items": [
       { "period": "2026 年 9 月 – 至今", "title": "RoadAI", "org": "个人项目", "text": "带有 AI 单据信息提取功能的接送运营平台。需求规格、架构、代码审查和真机测试由我负责；大部分代码由 Claude Code 编写。", "links": [{ "label": "案例分析", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
       { "period": "2023 年 3 月 – 2025 年 8 月（2024 年 9 月起远程兼职）", "title": "全栈学徒", "org": "Kadirov.DEV", "text": "学徒制，参与付费客户项目。在真实客户项目中积累了 2 年以上的全栈开发经验。",
+        "stack": ["PHP", "Laravel", "Symfony", "Vue.js", "MySQL", "Tailwind CSS"],
         "projects": [
           { "name": "养殖场管理系统", "role": "后端与前端", "url": null },
           { "name": "Boshqar.com", "role": "前端", "url": "https://boshqar.com/uz/promo" },

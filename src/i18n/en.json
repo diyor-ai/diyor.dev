@@ -38,10 +38,11 @@
     ]
   },
   "experience": {
-    "title": "Experience", "intro": "Work, projects and studies.", "education": "Education", "liveLink": "Live site",
+    "title": "Experience", "intro": "Work, projects and studies.", "education": "Education", "stackLabel": "Stack:", "liveLink": "Live site",
     "items": [
       { "period": "Sep 2026 – present", "title": "RoadAI", "org": "Independent project", "text": "Transfer-operations platform with AI voucher extraction. Specifications, architecture, code review and on-device testing are mine; most code was written with Claude Code.", "links": [{ "label": "Case study", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
       { "period": "Mar 2023 – Aug 2025 (remote part-time from Sep 2024)", "title": "Full-stack apprenticeship", "org": "Kadirov.DEV", "text": "Apprenticeship with work on paid client projects. 2+ years of full-stack experience on real client projects.",
+        "stack": ["PHP", "Laravel", "Symfony", "Vue.js", "MySQL", "Tailwind CSS"],
         "projects": [
           { "name": "Poultry farm management system", "role": "Backend and frontend", "url": null },
           { "name": "Boshqar.com", "role": "Frontend", "url": "https://boshqar.com/uz/promo" },
