@@ -17,7 +17,7 @@ Personal portfolio of Mukhammaddiyor Abdulazimov. Astro, static output, TypeScri
 - `public/cv/cv-en.pdf`, `cv-zh.pdf`: CVs (phone-free). The Russian site links the EN CV.
 
 ## Add a project
-Create `src/content/projects/<slug>/index.md` (English), plus `index.zh.md` and `index.ru.md`. Frontmatter: `title`, `summary`, `order`, `stats` (exactly 2 pairs `["value", "label"]`), `tags`, `repo`, optional `repoLabel`. The body is the detail page (Problem, What I did, Method, Results, Limitations, AI assistance). Cards on Home and Projects are built from these files.
+Create `src/content/projects/<slug>/index.md` (English), plus `index.zh.md` and `index.ru.md`. Frontmatter: `title`, `summary`, `order`, `stats` (exactly 2 pairs `["value", "label"]`), `tags`, `repo`, optional `repoLabel`. The body is the detail page (Problem, What I did, Method, Results, Limitations, AI assistance). Real figures from the project repos go in the same folder and are referenced with a relative path, plus an italic caption on the next line (CPU and SST pages get a light figure-card frame, see `figcards` in `ProjectDetail.astro`). The Gesture demo video and poster live in `public/media/` so the 6 MB GIF is never autoplayed. Cards on Home and Projects are built from these files.
 
 ## Add a blog post (with images), in EN / ZH / RU
 One folder per post. Images go in the same folder:

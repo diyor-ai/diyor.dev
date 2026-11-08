@@ -20,6 +20,19 @@ repo: https://github.com/diyor-ai/gesture-control-system
 - 画面中有手时，摄像头加追踪达到 **29.9 FPS**（摄像头上限约 30 FPS），初始设置下为 16.5–21.6 FPS。
 - **228 个测试**，约 1.6 秒。
 
+## 截图与演示
+截图与演示来自仓库 README；画面中的文字为英文。
+
+![--debug 模式：FPS、帧时间、手指状态、原始 → 稳定 → 手势。](./debug.jpg)
+*`--debug` 模式：FPS、帧时间、手指状态、原始 → 稳定 → 手势。*
+
+<figure class="video-fig">
+<video controls preload="none" playsinline width="800" height="450" poster="/media/gesture-demo-poster.webp" aria-label="Gesture Control 演示：光标、双击、滚动、音量、截图">
+<source src="/media/gesture-demo.mp4" type="video/mp4">
+</video>
+<figcaption>演示：光标、双击、滚动、音量、截图。视频，20 秒，无声音。</figcaption>
+</figure>
+
 ## 局限
 - 识别准确率尚未测量。
 - 完整应用（窗口、叠加显示、输入注入）没有做基准测试，只测了摄像头加追踪。

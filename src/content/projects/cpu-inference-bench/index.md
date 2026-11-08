@@ -37,6 +37,21 @@ My first, uncontrolled attempt was invalid: 12 of 18 repeated rows differed by m
 <figcaption>ResNet-18, INT8 speedup over FP32, batch 1 (higher is better)</figcaption>
 </figure>
 
+## Figures
+Figures from the repository README; the text inside the images is in English.
+
+![ResNet-18, FP32 vs INT8, p50 latency per batch (ms). Left: batch 1. Right: batch 32.](./resnet_fp32_vs_int8.png)
+*ResNet-18, FP32 vs INT8, p50 latency per batch (ms). Left: batch 1. Right: batch 32.*
+
+![ResNet-18 FP32, framework comparison (random weights, phase 1): p50 latency per batch at batch 1, 8 and 32. The hatched OpenVINO bar at batch 8 is an unstable row.](./resnet_fp32_frameworks.png)
+*ResNet-18 FP32, framework comparison (random weights, phase 1): p50 latency per batch at batch 1, 8 and 32. The hatched OpenVINO bar at batch 8 is an unstable row.*
+
+![BERT A (DistilBERT, SST-2), FP32 vs INT8, p50 latency per batch: sequence length 32 and 128, batch 1 and 8. Hatched bars are unstable rows.](./bert_a_fp32_vs_int8.png)
+*BERT A (DistilBERT, SST-2), FP32 vs INT8, p50 latency per batch: sequence length 32 and 128, batch 1 and 8. Hatched bars are unstable rows.*
+
+![INT8 accuracy change vs FP32 (paired, same samples): top-1 difference in percentage points with 95% paired-bootstrap confidence intervals. p-values are exact McNemar; the BERT rows also show the Bonferroni-corrected value.](./accuracy_int8_minus_fp32.png)
+*INT8 accuracy change vs FP32 (paired, same samples): top-1 difference in percentage points with 95% paired-bootstrap confidence intervals. p-values are exact McNemar; the BERT rows also show the Bonferroni-corrected value.*
+
 ## Limitations
 - Each framework's standard INT8 path is compared, not identical quantization. In BERT, for example, OpenVINO also quantizes the attention MatMuls.
 - I did not verify the cause of the speedup (for example VNNI). Kernel names do not settle it.

@@ -38,6 +38,21 @@ Birinchi, nazoratsiz urinishim yaroqsiz bo‘ldi: takrorlangan 18 qatordan 12 ta
 <figcaption>ResNet-18, INT8 ning FP32 ga nisbatan tezlashuvi, batch 1 (yuqori — yaxshiroq)</figcaption>
 </figure>
 
+## Grafiklar
+Grafiklar repozitoriy README’sidan; rasmlardagi matn inglizcha.
+
+![ResNet-18, FP32 va INT8, har bir batch uchun p50 kechikish (ms). Chapda: batch 1, o‘ngda: batch 32.](./resnet_fp32_vs_int8.png)
+*ResNet-18, FP32 va INT8, har bir batch uchun p50 kechikish (ms). Chapda: batch 1, o‘ngda: batch 32.*
+
+![ResNet-18 FP32, frameworklar taqqoslanishi (tasodifiy vaznlar, 1-bosqich): batch 1, 8 va 32 uchun har bir batch p50 kechikishi. Batch 8’dagi shtrixlangan OpenVINO ustuni barqaror bo‘lmagan qator.](./resnet_fp32_frameworks.png)
+*ResNet-18 FP32, frameworklar taqqoslanishi (tasodifiy vaznlar, 1-bosqich): batch 1, 8 va 32 uchun har bir batch p50 kechikishi. Batch 8’dagi shtrixlangan OpenVINO ustuni barqaror bo‘lmagan qator.*
+
+![BERT A (DistilBERT, SST-2), FP32 va INT8, har bir batch p50 kechikishi: ketma-ketlik uzunligi 32 va 128, batch 1 va 8. Shtrixlangan ustunlar barqaror bo‘lmagan qatorlar.](./bert_a_fp32_vs_int8.png)
+*BERT A (DistilBERT, SST-2), FP32 va INT8, har bir batch p50 kechikishi: ketma-ketlik uzunligi 32 va 128, batch 1 va 8. Shtrixlangan ustunlar barqaror bo‘lmagan qatorlar.*
+
+![INT8 aniqligining FP32 ga nisbatan o‘zgarishi (juftlangan, bir xil namunalar): top-1 farqi foiz punktlarida, 95% paired-bootstrap ishonch oraliqlari bilan. p-qiymatlar aniq McNemar testi; BERT qatorlarida Bonferroni bilan tuzatilgan qiymat ham berilgan.](./accuracy_int8_minus_fp32.png)
+*INT8 aniqligining FP32 ga nisbatan o‘zgarishi (juftlangan, bir xil namunalar): top-1 farqi foiz punktlarida, 95% paired-bootstrap ishonch oraliqlari bilan. p-qiymatlar aniq McNemar testi; BERT qatorlarida Bonferroni bilan tuzatilgan qiymat ham berilgan.*
+
 ## Cheklovlar
 - Har bir frameworkning standart INT8 yo‘li taqqoslanadi, bir xil kvantlash emas. Masalan, BERT’da OpenVINO e’tibor (attention) MatMul’larini ham kvantlaydi.
 - Tezlashuv sababini (masalan, VNNI) tekshirmadim. Kernel nomlari buni hal qilmaydi.

@@ -26,6 +26,27 @@ Methods that pull toward climatology (damped persistence and Ridge) lost most of
 
 The small LSTM beat Ridge in the subtropical box and did not beat it in the Kuroshio box. Skill vs Ridge at 1, 7 and 30 days on test: subtropical +0.029, +0.025, +0.022; Kuroshio −0.061, −0.017, −0.001. On validation the Kuroshio 7- and 30-day numbers had been slightly positive, and those gains did not hold. The subtropical result is weaker than it looks: Ridge is itself behind anomaly persistence at 1 and 7 days there, and so is the LSTM. The two regions disagree, so I make no general claim.
 
+## Figures
+Figures from the repository README; the text inside the images is in English.
+
+![Figure 1. Mean SST and standard deviation of the daily anomaly (training years) in the two regions.](./fig1_regions.png)
+*Figure 1. Mean SST and standard deviation of the daily anomaly (training years) in the two regions.*
+
+![Figure 2 (validation). RMSE and skill vs anomaly persistence by lead.](./fig2_val_leads.png)
+*Figure 2 (validation). RMSE and skill vs anomaly persistence by lead.*
+
+![Figure 2 (test, 2020–2025). Same layout; values below the axis are listed in the box.](./fig2_test_leads.png)
+*Figure 2 (test, 2020–2025). Same layout; values below the axis are listed in the box.*
+
+![Figure 3. Test skill vs anomaly persistence by season (mean ± std over years, dots = years).](./fig3_test_seasons.png)
+*Figure 3. Test skill vs anomaly persistence by season (mean ± std over years, dots = years).*
+
+![Figure S1. Area-mean anomaly vs the 1982–2015 climatology; the validation period is shaded.](./figS1_area_mean_anomaly.png)
+*Figure S1. Area-mean anomaly vs the 1982–2015 climatology; the validation period is shaded.*
+
+![LSTM learning curves.](./figL1_lstm_curves.png)
+*LSTM learning curves.*
+
 ## Limitations
 - Simple baselines plus one small LSTM experiment, nothing else learned. The LSTM gets the full 30-day sequence and the day of year, while Ridge gets fewer inputs, so part of any LSTM gain may come from the inputs; this was not tested.
 - Two small regions, one dataset.

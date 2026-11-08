@@ -27,6 +27,27 @@ Klimatologiyaga tortadigan metodlar (so‘nuvchi persistence va Ridge) validatsi
 
 Kichik LSTM subtropik hududda Ridge’dan o‘zib ketdi, Kuroshio hududida esa o‘zib keta olmadi. Testda Ridge’ga nisbatan skill, 1, 7 va 30 kunlik prognozda: subtropik +0.029, +0.025, +0.022; Kuroshio −0.061, −0.017, −0.001. Validatsiyada Kuroshio uchun 7 va 30 kunlik raqamlar biroz musbat edi va bu yutuqlar saqlanmadi. Subtropik natija ko‘ringanidan zaifroq: u yerda Ridge o‘zi 1 va 7 kunda anomaliya persistence’dan orqada, LSTM ham shunday. Ikki hudud bir-biriga zid, shuning uchun umumiy da’vo qilmayman.
 
+## Grafiklar
+Grafiklar repozitoriy README’sidan; rasmlardagi matn inglizcha.
+
+![1-rasm. Ikki hududda o‘rtacha SST va kunlik anomaliyaning standart og‘ishi (o‘qitish yillari).](./fig1_regions.png)
+*1-rasm. Ikki hududda o‘rtacha SST va kunlik anomaliyaning standart og‘ishi (o‘qitish yillari).*
+
+![2-rasm (validatsiya). Prognoz muddati bo‘yicha RMSE va anomaliya persistence’ga nisbatan skill.](./fig2_val_leads.png)
+*2-rasm (validatsiya). Prognoz muddati bo‘yicha RMSE va anomaliya persistence’ga nisbatan skill.*
+
+![2-rasm (test, 2020–2025). Joylashuv bir xil; o‘q ostidagi qiymatlar ramkada keltirilgan.](./fig2_test_leads.png)
+*2-rasm (test, 2020–2025). Joylashuv bir xil; o‘q ostidagi qiymatlar ramkada keltirilgan.*
+
+![3-rasm. Fasllar bo‘yicha testdagi anomaliya persistence’ga nisbatan skill (yillar bo‘yicha o‘rtacha ± std, nuqtalar — yillar).](./fig3_test_seasons.png)
+*3-rasm. Fasllar bo‘yicha testdagi anomaliya persistence’ga nisbatan skill (yillar bo‘yicha o‘rtacha ± std, nuqtalar — yillar).*
+
+![S1-rasm. Hudud bo‘yicha o‘rtacha anomaliya, 1982–2015 klimatologiyasiga nisbatan; validatsiya davri bo‘yalgan.](./figS1_area_mean_anomaly.png)
+*S1-rasm. Hudud bo‘yicha o‘rtacha anomaliya, 1982–2015 klimatologiyasiga nisbatan; validatsiya davri bo‘yalgan.*
+
+![LSTM o‘rganish egri chiziqlari.](./figL1_lstm_curves.png)
+*LSTM o‘rganish egri chiziqlari.*
+
 ## Cheklovlar
 - Oddiy baselinelar va bitta kichik LSTM tajribasi, boshqa o‘qitiladigan narsa yo‘q. LSTM to‘liq 30 kunlik ketma-ketlik va yil kunini oladi, Ridge esa kamroq kirish oladi, shuning uchun LSTM yutug‘ining bir qismi modeldan emas, kirishlardan bo‘lishi mumkin; bu sinalmagan.
 - Ikkita kichik hudud, bitta ma’lumotlar to‘plami.

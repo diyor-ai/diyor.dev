@@ -19,6 +19,19 @@ Frame rate was measured with a benchmark script (real webcam and MediaPipe, no w
 - **29.9 FPS** for camera plus tracking with a hand in view (the camera limit is about 30 FPS), up from 16.5–21.6 FPS with the first settings.
 - **228 tests** in about 1.6 s.
 
+## Media
+Screenshot and demo from the repository README; the on-screen text is in English.
+
+![--debug mode: FPS, frame time, finger states, raw → stable → gesture.](./debug.jpg)
+*`--debug` mode: FPS, frame time, finger states, raw → stable → gesture.*
+
+<figure class="video-fig">
+<video controls preload="none" playsinline width="800" height="450" poster="/media/gesture-demo-poster.webp" aria-label="Gesture Control demo: cursor, double click, scroll, volume, screenshot">
+<source src="/media/gesture-demo.mp4" type="video/mp4">
+</video>
+<figcaption>Demo: cursor, double click, scroll, volume, screenshot. Video, 20 s, no sound.</figcaption>
+</figure>
+
 ## Limitations
 - Recognition accuracy is not measured.
 - The full application (window, overlay, input injection) was not benchmarked, only camera plus tracking.

@@ -38,6 +38,21 @@ repo: https://github.com/diyor-ai/cpu-inference-bench
 <figcaption>ResNet-18，batch 1，INT8 相对 FP32 的加速比（越高越好）</figcaption>
 </figure>
 
+## 图表
+以下图表来自仓库 README；图中文字为英文。
+
+![ResNet-18，FP32 与 INT8，每批 p50 延迟（ms）。左：batch 1；右：batch 32。](./resnet_fp32_vs_int8.png)
+*ResNet-18，FP32 与 INT8，每批 p50 延迟（ms）。左：batch 1；右：batch 32。*
+
+![ResNet-18 FP32 框架对比（随机权重，第 1 阶段）：batch 1、8、32 的每批 p50 延迟。batch 8 下带斜线的 OpenVINO 柱为不稳定行。](./resnet_fp32_frameworks.png)
+*ResNet-18 FP32 框架对比（随机权重，第 1 阶段）：batch 1、8、32 的每批 p50 延迟。batch 8 下带斜线的 OpenVINO 柱为不稳定行。*
+
+![BERT A（DistilBERT，SST-2），FP32 与 INT8，每批 p50 延迟：序列长度 32 和 128，batch 1 和 8。带斜线的柱为不稳定行。](./bert_a_fp32_vs_int8.png)
+*BERT A（DistilBERT，SST-2），FP32 与 INT8，每批 p50 延迟：序列长度 32 和 128，batch 1 和 8。带斜线的柱为不稳定行。*
+
+![INT8 相对 FP32 的精度变化（配对，同一样本）：top-1 差值（百分点）及 95% 配对 bootstrap 置信区间。p 值为精确 McNemar 检验；BERT 各行同时给出 Bonferroni 校正值。](./accuracy_int8_minus_fp32.png)
+*INT8 相对 FP32 的精度变化（配对，同一样本）：top-1 差值（百分点）及 95% 配对 bootstrap 置信区间。p 值为精确 McNemar 检验；BERT 各行同时给出 Bonferroni 校正值。*
+
 ## 局限
 - 比较的是各框架标准的 INT8 路径，而不是完全相同的量化方式。例如在 BERT 中，OpenVINO 还会量化注意力部分的 MatMul。
 - 我没有验证加速的原因（例如 VNNI），仅凭内核名称无法确定。

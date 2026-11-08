@@ -20,6 +20,19 @@ Kadr tezligi benchmark skripti bilan (haqiqiy veb-kamera va MediaPipe, oynasiz, 
 - Qo‘l ko‘rinib turganda kamera va kuzatuv uchun **29.9 FPS** (kamera chegarasi taxminan 30 FPS); dastlabki sozlamalarda bu 16.5–21.6 FPS edi.
 - Taxminan 1.6 s ichida **228 ta test**.
 
+## Media
+Skrinshot va demo repozitoriy README’sidan; ekrandagi matn inglizcha.
+
+![--debug rejimi: FPS, kadr vaqti, barmoq holatlari, xom → barqaror → imo-ishora.](./debug.jpg)
+*`--debug` rejimi: FPS, kadr vaqti, barmoq holatlari, xom → barqaror → imo-ishora.*
+
+<figure class="video-fig">
+<video controls preload="none" playsinline width="800" height="450" poster="/media/gesture-demo-poster.webp" aria-label="Gesture Control demosi: kursor, ikki marta bosish, aylantirish, ovoz, skrinshot">
+<source src="/media/gesture-demo.mp4" type="video/mp4">
+</video>
+<figcaption>Demo: kursor, ikki marta bosish, aylantirish, ovoz, skrinshot. Video, 20 s, ovozsiz.</figcaption>
+</figure>
+
 ## Cheklovlar
 - Tanib olish aniqligi o‘lchanmagan.
 - To‘liq ilova (oyna, overlay, kiritishni yuborish) benchmark qilinmagan, faqat kamera va kuzatuv.
