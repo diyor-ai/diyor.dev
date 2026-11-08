@@ -2,11 +2,10 @@
 title: Gesture Control
 summary: Veb-kamera orqali qo‘l imo-ishoralari bilan kompyuterni boshqaradi, MediaPipe qo‘l kuzatuvi va OpenCV’dan foydalanadi.
 order: 4
-stats: [["29.9 FPS", "kamera + kuzatuv, CPU"], ["228", "test, ~1.6 s ichida"]]
+stats: [["29.9 FPS", "kamera + kuzatuv, CPU"], ["228", "test ~1.6 soniyada o‘tadi"]]
 tags: [MediaPipe, OpenCV, Python]
 repo: https://github.com/diyor-ai/gesture-control-system
 ---
-<!-- REVIEW: translation -->
 ## Muammo
 Kompyuterni (bosish, aylantirish, ovoz, skrinshotlar) oddiy veb-kamera orqali qo‘l imo-ishoralari bilan, faqat CPU’da boshqarish; shu jumladan keng tarqalgan kiritish kutubxonalari ishlamaydigan Linux/Wayland’da ham.
 

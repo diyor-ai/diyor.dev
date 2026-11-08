@@ -6,7 +6,6 @@ stats: [["29,9 FPS", "камера + трекинг, CPU"], ["228", "тесто�
 tags: [MediaPipe, OpenCV, Python]
 repo: https://github.com/diyor-ai/gesture-control-system
 ---
-<!-- REVIEW: translation -->
 ## Задача
 Управлять компьютером (клики, прокрутка, громкость, скриншоты) жестами руки с обычной веб-камеры, только на CPU, в том числе в Linux/Wayland, где распространённые библиотеки ввода не работают.
 

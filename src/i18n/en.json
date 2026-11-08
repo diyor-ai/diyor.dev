@@ -1,7 +1,7 @@
 {
   "htmlLang": "en", "ogLocale": "en_US",
   "nav": { "projects": "Projects", "experience": "Experience", "blog": "Blog", "contact": "Contact" },
-  "menu": "Menu", "theme": "Toggle light/dark theme", "skip": "Skip to content", "langLabel": "Language",
+  "menu": "Menu", "navLabel": "Main", "theme": "Toggle light/dark theme", "skip": "Skip to content", "langLabel": "Language",
   "meta": {
     "homeTitle": "Mukhammaddiyor Abdulazimov · AI student, ML inference & full-stack",
     "homeDesc": "AI student at Harbin Engineering University. CPU inference benchmarks, reproducible ML evaluations and 2+ years of full-stack work. Open to internships.",
@@ -49,7 +49,7 @@
           { "name": "AstraCode", "role": "Frontend and backend", "url": "https://astracode.ai/" },
           { "name": "Certificate platform with QR verification", "role": "", "url": null }
         ] },
-      { "period": "Nov 2022 – Dec 2023", "title": "Programming courses", "org": "Kadirov.Dev", "text": "Certificate course. Coding since 2022." }
+      { "period": "Nov 2022 – Dec 2023", "title": "Programming courses", "org": "Kadirov.DEV", "text": "Certificate course. Coding since 2022." }
     ],
     "edu": {
       "school": "Harbin Engineering University (HEU)", "program": "English-taught program", "period": "Sep 2024 – Jun 2028 (3rd year)",

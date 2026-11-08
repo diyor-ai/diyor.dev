@@ -1,12 +1,11 @@
 ---
 title: SST Baselines
-summary: Shimoliy Tinch okeanining ikki hududida kunlik dengiz sirti harorati (NOAA OISST) uchun baselinelar va takrorlanuvchi baholash.
+summary: Shimoliy Tinch okeanining ikki hududida kunlik dengiz sirti harorati (NOAA OISST) uchun baselinelar va takrorlanadigan baholash.
 order: 2
-stats: [["6", "taqqoslangan baseline"], ["40", "test"]]
+stats: [["6", "baseline taqqoslandi"], ["40", "test"]]
 tags: [Python, NOAA OISST, Ridge regression]
 repo: https://github.com/diyor-ai/sst-baselines
 ---
-<!-- REVIEW: translation -->
 ## Muammo
 Dengiz sirti harorati (SST) bo‘yicha biror o‘qitiladigan modelni taqqoslashdan oldin, oddiy baselinelardan o‘zib ketish qanchalik qiyinligini bilish kerak. Bu — ana shu baselinelarni o‘rganish, operativ okean prognozi uchun model emas. Ish HEU’dagi o‘qituvchimning ruxsati bilan bajarildi.
 

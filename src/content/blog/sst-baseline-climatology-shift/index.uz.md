@@ -4,7 +4,6 @@ description: "Dengiz sirti haroratining baseline va baholash tadqiqotida klimato
 date: 2026-11-07
 draft: false
 ---
-<!-- REVIEW: translation -->
 Biror o‘qitiladigan modelni taqqoslashdan oldin, kunlik dengiz sirti harorati (SST) uchun oddiy baselinelardan o‘zib ketish qanchalik qiyinligini bilmoqchi edim. Validatsiya yillarida (2016-2019) ko‘rgan reytingim test yillarida (2020-2025) saqlanmadi. Bu maqola nima o‘zgargani, sababi haqida nimani ayta olishim va nimani ayta olmasligim hamda keyin qo‘shgan kichik LSTM haqida.
 
 Barcha raqamlar [sst-baselines](https://github.com/diyor-ai/sst-baselines) README’sidan va `results/` fayllaridan olingan. Bu baseline va baholash tadqiqoti, operativ prognoz tizimi emas.
@@ -30,7 +29,7 @@ Ridge ham, so‘nuvchi persistence ham prognozni 1982-2015 klimatologiyasi tomon
 | So‘nuvchi persistence, Kuroshio | +0.010, +0.067, +0.164 | −0.017, −0.012, +0.058 |
 | So‘nuvchi persistence, subtropik | −0.004, −0.017, +0.028 | −0.109, −0.178, −0.091 |
 
-Kuroshio qutisida Ridge har bir muddatda oldinda qoldi, faqat 7 kunda marja ancha kichik. Subtropik qutida so‘nuvchi persistence validatsiyada 1 va 7 kunda allaqachon orqada edi, testda esa har bir muddatda orqada qoldi.
+Kuroshio qutisida Ridge har bir muddatda oldinda qoldi, faqat 7 kunda farq ancha kichik. Subtropik qutida so‘nuvchi persistence validatsiyada 1 va 7 kunda allaqachon orqada edi, testda esa har bir muddatda orqada qoldi.
 
 ## Mumkin bo‘lgan tushuntirish, isbotlanmagan
 
@@ -49,7 +48,7 @@ Testda Ridge’ga nisbatan skill, 1, 7 va 30 kunda:
 
 Subtropik natija ko‘ringanidan zaifroq. Ridge o‘zi shu qutida 1 va 7 kunda anomaliya persistence’dan yomonroq, LSTM ham u yerda anomaliya persistence’dan orqada (−0.018 va −0.023). Bundan tashqari, LSTM to‘liq 30 kunlik ketma-ketlik va yil kunini oladi, Ridge esa kamroq kirish oladi, shuning uchun har qanday yutuqning bir qismi modeldan emas, kirishlardan bo‘lishi mumkin. Buni sinamadim. Ikki hudud ikki xil javob berdi, shuning uchun bundan oladigan yagona xulosam — bitta hududdagi bitta natijadan hikoya qurmaslik.
 
-## Mendan nima qoldi
+## Bundan nimani o‘rgandim
 
 - Reytingga ishonishdan oldin, uning validatsiyadagi ko‘rinishi keyingi davrda ham saqlanishini tekshiring.
 - Qaysi tushuntirish ma’lumotlarga mos kelishini va qaysi biri isbotlanganini ochiq ayting.

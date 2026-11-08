@@ -7,7 +7,6 @@ tags: [FastAPI, Flutter, React, PostgreSQL]
 repo: https://github.com/diyor-ai/roadai-case-study
 repoLabel: 案例分析（应用代码为私有）
 ---
-<!-- REVIEW: translation -->
 ## 问题
 接送公司需要在机场与酒店之间运送乘客。公开的案例分析描述了它要解决的问题：司机需要手工重新录入纸质单据、没有送达记录、无法了解车辆使用情况。
 

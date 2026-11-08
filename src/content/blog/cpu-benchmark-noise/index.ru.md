@@ -4,7 +4,6 @@ description: "Как я превратил неконтролируемый бе
 date: 2026-11-05
 draft: false
 ---
-<!-- REVIEW: translation -->
 Мои первые цифры бенчмарка выглядели разумно, пока я не запустил то же самое дважды и не получил разные ответы. Эта статья о том, как я нашёл причину и что изменил, прежде чем доверять любым числам.
 
 Все числа взяты из README репозитория [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench) (включая раздел «First attempt (archived)») и из `results/archive_summary.json`.

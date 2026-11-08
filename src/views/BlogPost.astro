@@ -1,17 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
-import { getT, localePath, type Lang } from '../i18n/utils';
+import { getT, localePath, formatDate, type Lang } from '../i18n/utils';
 const { lang, entry } = Astro.props as { lang: Lang; entry: any };
 const t = getT(lang);
 const { Content } = await render(entry);
 const d = entry.data;
-const fmt = new Intl.DateTimeFormat(t.htmlLang, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
 <article class="wrap page narrow">
   <p class="crumb"><a href={localePath(lang, '/blog/')}>← {t.blog.back}</a></p>
   <h1>{d.title}</h1>
-  <p class="muted mono">{fmt.format(d.date)}</p>
+  <p class="muted mono">{formatDate(lang, d.date)}</p>
   {d.cover && <Image src={d.cover} alt={d.coverAlt} widths={[480, 800, 1200]} sizes="(max-width: 840px) 100vw, 760px" class="cover" loading="eager" />}
   <div class="prose"><Content /></div>
 </article>

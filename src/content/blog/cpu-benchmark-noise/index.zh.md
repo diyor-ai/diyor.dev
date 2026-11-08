@@ -4,7 +4,6 @@ description: "我如何把一次不受控的笔记本基准测试变成可重复
 date: 2026-11-05
 draft: false
 ---
-<!-- REVIEW: translation -->
 我最初的基准测试数字看起来还算合理，直到我把同样的测试跑了两次，得到了不同的结果。这篇文章讲的是我如何找出原因，以及在相信任何数字之前我改了什么。
 
 所有数字都来自 [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench) 仓库的 README（包括其中的 "First attempt (archived)" 部分）和 `results/archive_summary.json`。

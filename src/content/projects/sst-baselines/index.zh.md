@@ -6,7 +6,6 @@ stats: [["6", "个基线方法"], ["40", "个测试"]]
 tags: [Python, NOAA OISST, Ridge regression]
 repo: https://github.com/diyor-ai/sst-baselines
 ---
-<!-- REVIEW: translation -->
 ## 问题
 在比较任何学习型模型的海表温度（SST）预测之前，需要先知道简单基线有多难被超越。这个项目研究的就是这些基线，它不是海洋预报模型。该工作经哈尔滨工程大学老师许可完成。
 

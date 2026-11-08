@@ -2,18 +2,18 @@
 import ProjectCard from '../components/ProjectCard.astro';
 import Icon from '../components/Icon.astro';
 import { getT, type Lang } from '../i18n/utils';
-import { getProjects } from '../lib/content';
+import { getProjectsWithFallback } from '../lib/content';
 import { repoUpdated, commitDate } from '../lib/github';
 const { lang } = Astro.props as { lang: Lang };
 const t = getT(lang);
-const projects = await getProjects(lang);
+const projects = await getProjectsWithFallback(lang);
 const others = await Promise.all(t.projectsPage.otherItems.map(async (o) => ({ ...o, updated: await repoUpdated(o.repo) })));
 ---
 <section class="wrap page">
   <h1>{t.projectsPage.title}</h1>
   <p class="lead">{t.projectsPage.intro}</p>
   <h2>{t.featured.title}</h2>
-  <div class="cards">{projects.map((p) => <ProjectCard lang={lang} slug={p.slug} {...p.data} />)}</div>
+  <div class="cards">{projects.map((p) => <ProjectCard lang={lang} slug={p.slug} fb={p.fb} {...p.data} />)}</div>
   <h2 class="mt">{t.projectsPage.other}</h2>
   <ul class="rows">
     {others.map((o) => (

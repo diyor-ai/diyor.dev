@@ -6,7 +6,6 @@ stats: [["29.9 FPS", "摄像头 + 追踪，CPU"], ["228", "个测试，约 1.6 �
 tags: [MediaPipe, OpenCV, Python]
 repo: https://github.com/diyor-ai/gesture-control-system
 ---
-<!-- REVIEW: translation -->
 ## 问题
 用普通摄像头和手势控制电脑（点击、滚动、音量、截图），只使用 CPU，并且在常见输入库无法工作的 Linux/Wayland 上也能运行。
 

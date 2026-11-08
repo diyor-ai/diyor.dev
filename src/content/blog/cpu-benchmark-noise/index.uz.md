@@ -1,10 +1,9 @@
 ---
 title: "Birinchi CPU benchmarkim nega foydalanib bo‘lmas darajada shovqinli edi va uni qanday tuzatdim"
-description: "Nazoratsiz noutbuk benchmarkini qanday qilib takrorlanuvchi INT8 va FP32 o‘lchovlariga aylantirdim: qat’iy chastota, qotirilgan yadrolar, sovitish va barqarorlik qoidasi."
+description: "Nazoratsiz noutbuk benchmarkini qanday qilib takrorlanadigan INT8 va FP32 o‘lchovlariga aylantirdim: qat’iy chastota, qotirilgan yadrolar, sovitish va barqarorlik qoidasi."
 date: 2026-11-05
 draft: false
 ---
-<!-- REVIEW: translation -->
 Birinchi benchmark raqamlarim o‘rinli ko‘rindi, to‘g‘risi, bir xil narsani ikki marta ishga tushirib, turli javob olgunimcha. Bu maqola buning sababini qanday aniqlaganim va biror raqamga ishonishdan oldin nimani o‘zgartirganim haqida.
 
 Barcha raqamlar [cpu-inference-bench](https://github.com/diyor-ai/cpu-inference-bench) repozitoriysining README’sidan (shu jumladan "First attempt (archived)" bo‘limidan) va `results/archive_summary.json` faylidan olingan.
@@ -19,7 +18,7 @@ Noutbukda paket quvvati va termal chegaralar bor, shuning uchun chastota ish dav
 
 Birinchi urinishda standart chastota boshqaruvi ishlatilgan edi, ya’ni chastota erkin o‘zgara olardi. Bu CPU’ning doimiy paket quvvati chegarasi 45 W, qisqa muddatli chegarasi 115 W, va shunga o‘xshash quvvat hamda termal chegaralar ish davomida chastotani o‘zgartirishi mumkin. Fon xizmatlari va yadrolarni bo‘lishadigan boshqa jarayonlar ham shovqin qo‘shishi mumkin.
 
-O‘sha urinish ma’lumotlari lokal arxivlangan va ommaviy repoda yo‘q, shuning uchun bu yerda har bir ishga tushirishning chastotalari yoki haroratlarini ko‘rsata olmayman. Qaysi omil ustun kelganini taxmin qilish o‘rniga, sozlamani shunday o‘zgartirdimki, har bir omil yo yo‘naltirilgan, yo ko‘rinadigan bo‘ldi: endi har bir takror paket haroratini, P-yadrolarning o‘rtacha va minimal chastotasini hamda yadroning termal-throttle hisoblagichlarini yozib boradi.
+O‘sha urinish ma’lumotlari lokal arxivlangan va ommaviy repoda yo‘q, shuning uchun bu yerda har bir ishga tushirishning chastotalari yoki haroratlarini ko‘rsata olmayman. Qaysi omil ustun kelganini taxmin qilish o‘rniga, sozlamani shunday o‘zgartirdimki, har bir omil nazorat qilinadigan yoki ko‘rinadigan bo‘ldi: endi har bir takror paket haroratini, P-yadrolarning o‘rtacha va minimal chastotasini hamda yadroning termal-throttle hisoblagichlarini yozib boradi.
 
 ## Hali ham yetarli bo‘lmagan pilot
 
@@ -45,7 +44,7 @@ Shu nazoratlar bilan ResNet-18 INT8 va FP32, batch 1’da 2.34× (PyTorch), 2.74
 
 Termal hisoblagichlar quvvat chegarasi sabab throttle’ni aniqlamaydi, shuning uchun chastota ustunlarini ham tekshirdim. Barcha ishga tushirishlar davomida VPN klienti ishlab turdi va uning ta’sirini o‘lchamadim. Bu bitta noutbuk va bitta kampaniya.
 
-## Mendan nima qoldi
+## Bundan nimani o‘rgandim
 
 - Biror narsani taqqoslashdan oldin bir xil konfiguratsiyani ikki marta ishga tushiring.
 - Barqaror bo‘lmagan natijalarni yashirmasdan e’lon qiling.

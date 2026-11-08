@@ -1,7 +1,7 @@
 {
   "htmlLang": "zh-CN", "ogLocale": "zh_CN",
   "nav": { "projects": "项目", "experience": "经历", "blog": "博客", "contact": "联系" },
-  "menu": "菜单", "theme": "切换浅色/深色主题", "skip": "跳到正文", "langLabel": "语言",
+  "menu": "菜单", "navLabel": "主导航", "theme": "切换浅色/深色主题", "skip": "跳到正文", "langLabel": "语言",
   "meta": {
     "homeTitle": "Mukhammaddiyor Abdulazimov · 人工智能专业学生，ML 推理与全栈",
     "homeDesc": "哈尔滨工程大学人工智能专业学生。CPU 推理基准测试、可复现的机器学习评估，以及 2 年以上全栈开发经验。寻找实习机会。",
@@ -16,7 +16,7 @@
     "name": "Mukhammaddiyor Abdulazimov",
     "headline": "哈尔滨工程大学人工智能专业学生 · ML 推理与全栈",
     "intro": "哈尔滨工程大学人工智能专业（全英文授课）三年级学生。我对模型做 CPU 推理基准测试与量化，构建可复现的机器学习评估，并在真实客户项目中积累了 2 年以上的全栈开发经验。正在寻找 AI/ML 与全栈方向的实习机会。",
-    "cv": "下载简历", "projects": "查看项目", "contact": "联系我", "photoAlt": "Mukhammaddiyor Abdulazimov 的照片"
+    "cv": "下载简历（中文版）", "projects": "查看项目", "contact": "联系我", "photoAlt": "Mukhammaddiyor Abdulazimov 的照片"
   },
   "social": { "github": "GitHub", "linkedin": "LinkedIn", "email": "邮箱" },
   "featured": { "title": "精选项目", "all": "全部项目", "details": "详情", "repo": "GitHub" },
@@ -49,7 +49,7 @@
           { "name": "AstraCode", "role": "前端与后端", "url": "https://astracode.ai/" },
           { "name": "带二维码验证的证书平台", "role": "", "url": null }
         ] },
-      { "period": "2022 年 11 月 – 2023 年 12 月", "title": "编程课程", "org": "Kadirov.Dev", "text": "获得结业证书。2022 年开始学习编程。" }
+      { "period": "2022 年 11 月 – 2023 年 12 月", "title": "编程课程", "org": "Kadirov.DEV", "text": "获得结业证书。2022 年开始学习编程。" }
     ],
     "edu": {
       "school": "哈尔滨工程大学（HEU）", "program": "全英文授课项目", "period": "2024 年 9 月 – 2028 年 6 月（三年级）",

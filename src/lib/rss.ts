@@ -6,8 +6,9 @@ export async function feed(lang: Lang) {
   const t = getT(lang);
   const posts = (await getPosts(lang)).filter((p) => !p.data.draft);
   return rss({
-    title: `diyor.dev · ${t.blog.title}`, description: t.meta.blogDesc, site: SITE,
+    title: `diyor.dev · ${t.blog.title}`, description: t.meta.blogDesc, site: SITE + localePath(lang, '/'),
+    xmlns: { atom: 'http://www.w3.org/2005/Atom' },
     items: posts.map((p) => ({ title: p.data.title, description: p.data.description, pubDate: p.data.date, link: localePath(lang, `/blog/${p.slug}/`) })),
-    customData: `<language>${t.htmlLang}</language>`,
+    customData: `<language>${t.htmlLang}</language><atom:link href="${SITE + localePath(lang, '/rss.xml')}" rel="self" type="application/rss+xml"/>`,
   });
 }

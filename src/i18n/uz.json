@@ -1,22 +1,22 @@
 {
   "htmlLang": "uz", "ogLocale": "uz_UZ",
   "nav": { "projects": "Loyihalar", "experience": "Tajriba", "blog": "Blog", "contact": "Aloqa" },
-  "menu": "Menyu", "theme": "Yorug‘/qorong‘i mavzuni almashtirish", "skip": "Asosiy qismga o‘tish", "langLabel": "Til",
+  "menu": "Menyu", "navLabel": "Asosiy navigatsiya", "theme": "Yorug‘/qorong‘i mavzuni almashtirish", "skip": "Asosiy qismga o‘tish", "langLabel": "Til",
   "meta": {
     "homeTitle": "Mukhammaddiyor Abdulazimov · AI talabasi, ML inference va full-stack",
-    "homeDesc": "Harbin muhandislik universitetida AI talabasi. CPU inference benchmarklari, takrorlanuvchi ML baholashlari va 2+ yillik full-stack tajriba. Amaliyotga ochiq.",
-    "projectsTitle": "Loyihalar", "projectsDesc": "CPU inference benchmarki, SST baselinelari, RoadAI case study va imo-ishora bilan boshqarish tizimi: aniq raqamlar va cheklovlar bilan.",
+    "homeDesc": "Harbin muhandislik universitetining AI yo‘nalishi talabasi. CPU inference benchmarklari, takrorlanadigan ML baholashlari va 2+ yillik full-stack tajriba. Amaliyotga ochiq.",
+    "projectsTitle": "Loyihalar", "projectsDesc": "CPU inference benchmarki, SST baselinelari, RoadAI loyiha tahlili va imo-ishora bilan boshqarish tizimi: aniq raqamlar va cheklovlar bilan.",
     "experienceTitle": "Tajriba", "experienceDesc": "Kadirov.DEV’dagi full-stack shogirdlik, mustaqil loyihalar va Harbin muhandislik universitetidagi ta’lim.",
     "blogTitle": "Blog", "blogDesc": "Benchmarking, baholash va ML tizimlarini qurish haqida qaydlar.",
-    "contactTitle": "Aloqa", "contactDesc": "Mukhammaddiyor Abdulazimov uchun email, GitHub, LinkedIn va WeChat.",
+    "contactTitle": "Aloqa", "contactDesc": "Mukhammaddiyor Abdulazimov bilan bog‘lanish: email, GitHub, LinkedIn va WeChat.",
     "nowTitle": "Hozir", "nowDesc": "Mukhammaddiyor Abdulazimov hozir nima bilan shug‘ullanmoqda: o‘qish, yakunlangan SST Baselines LSTM tajribasi va amaliyot izlash.",
     "notFoundTitle": "Sahifa topilmadi"
   },
   "hero": {
     "name": "Mukhammaddiyor Abdulazimov",
-    "headline": "Harbin muhandislik universitetida AI talabasi · ML inference va full-stack",
-    "intro": "Harbin muhandislik universitetida sun’iy intellekt yo‘nalishi (ingliz tilida o‘qitiladi) 3-kurs talabasi. Modellarni CPU’da inference uchun benchmark qilaman va kvantlayman, takrorlanuvchi ML baholashlarini quraman, real mijoz loyihalarida 2+ yillik full-stack tajribam bor. AI/ML va full-stack amaliyotlariga ochiqman.",
-    "cv": "CV’ni yuklab olish", "projects": "Loyihalarni ko‘rish", "contact": "Aloqa", "photoAlt": "Mukhammaddiyor Abdulazimov portreti"
+    "headline": "AI talabasi · ML inference va full-stack",
+    "intro": "Harbin muhandislik universitetida sun’iy intellekt yo‘nalishi (ingliz tilida o‘qitiladi) 3-kurs talabasi. Modellarni CPU’da inference uchun benchmark qilaman va quantization qilaman, takrorlanadigan ML baholashlarini quraman, real mijoz loyihalarida 2+ yillik full-stack tajribam bor. AI/ML va full-stack amaliyotlariga ochiqman.",
+    "cv": "CV yuklab olish (EN)", "projects": "Loyihalarni ko‘rish", "contact": "Aloqa", "photoAlt": "Mukhammaddiyor Abdulazimov portreti"
   },
   "social": { "github": "GitHub", "linkedin": "LinkedIn", "email": "Email" },
   "featured": { "title": "Tanlangan loyihalar", "all": "Barcha loyihalar", "details": "Batafsil", "repo": "GitHub" },
@@ -40,7 +40,7 @@
   "experience": {
     "title": "Tajriba", "intro": "Ish, loyihalar va ta’lim.", "education": "Ta’lim", "stackLabel": "Stek:", "liveLink": "Jonli sayt",
     "items": [
-      { "period": "2026-yil sentyabr – hozirgacha", "title": "RoadAI", "org": "Mustaqil loyiha", "text": "AI yordamida voucherlardan ma’lumot ajratib olish imkoniyatiga ega transfer operatsiyalari platformasi. Texnik topshiriq, arxitektura, kod ko‘rigi va qurilmada sinov menga tegishli; kodning ko‘p qismi Claude Code yordamida yozilgan.", "links": [{ "label": "Case study", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
+      { "period": "2026-yil sentyabr – hozirgacha", "title": "RoadAI", "org": "Mustaqil loyiha", "text": "AI yordamida voucherlardan ma’lumot ajratib olish imkoniyatiga ega transfer xizmatlarini boshqarish platformasi. Texnik topshiriq, arxitektura, kod ko‘rigi va qurilmada sinov menga tegishli; kodning ko‘p qismi Claude Code yordamida yozilgan.", "links": [{ "label": "Loyiha tahlili", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
       { "period": "2023-yil mart – 2025-yil avgust (2024-yil sentyabrdan masofaviy, qisman bandlik)", "title": "Full-stack shogirdlik", "org": "Kadirov.DEV", "text": "Pullik mijoz loyihalarida ishlashni o‘z ichiga olgan shogirdlik. Real mijoz loyihalarida 2+ yillik full-stack tajriba.",
         "stack": ["PHP", "Laravel", "Symfony", "Vue.js", "MySQL", "Tailwind CSS"],
         "projects": [
@@ -49,7 +49,7 @@
           { "name": "AstraCode", "role": "Frontend va backend", "url": "https://astracode.ai/" },
           { "name": "QR orqali tekshiriladigan sertifikat platformasi", "role": "", "url": null }
         ] },
-      { "period": "2022-yil noyabr – 2023-yil dekabr", "title": "Dasturlash kurslari", "org": "Kadirov.Dev", "text": "Sertifikatli kurs. 2022-yildan beri kod yozaman." }
+      { "period": "2022-yil noyabr – 2023-yil dekabr", "title": "Dasturlash kurslari", "org": "Kadirov.DEV", "text": "Sertifikatli kurs. 2022-yildan beri kod yozaman." }
     ],
     "edu": {
       "school": "Harbin muhandislik universiteti (HEU)", "program": "Ingliz tilida o‘qitiladigan dastur", "period": "2024-yil sentyabr – 2028-yil iyun (3-kurs)",

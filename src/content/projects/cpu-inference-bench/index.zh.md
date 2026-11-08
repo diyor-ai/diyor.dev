@@ -6,7 +6,6 @@ stats: [["3.48×", "ResNet-18 INT8 对 FP32，OpenVINO"], ["2.6 ms", "OpenVINO I
 tags: [PyTorch, ONNX Runtime, OpenVINO, NNCF]
 repo: https://github.com/diyor-ai/cpu-inference-bench
 ---
-<!-- REVIEW: translation -->
 ## 问题
 在笔记本 CPU 上比较框架很容易出错：功耗与温度限制会在运行过程中改变频率。我想得到 PyTorch、ONNX Runtime 和 OpenVINO 的 INT8 与 FP32 对比数据，并且这些数据可信、可复现。
 

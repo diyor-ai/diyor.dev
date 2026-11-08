@@ -5,11 +5,11 @@ import HandMotif from '../components/HandMotif.astro';
 import Icon from '../components/Icon.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getT, localePath, type Lang } from '../i18n/utils';
-import { getProjects } from '../lib/content';
+import { getProjectsWithFallback } from '../lib/content';
 import { SHOW_CV, CV_FILES, GITHUB, LINKEDIN, EMAIL } from '../config';
 const { lang } = Astro.props as { lang: Lang };
 const t = getT(lang);
-const projects = await getProjects(lang);
+const projects = await getProjectsWithFallback(lang);
 ---
 <section class="hero">
   <div class="wrap hero-grid">
@@ -36,7 +36,7 @@ const projects = await getProjects(lang);
 <section class="wrap block">
   <div class="block-head"><h2>{t.featured.title}</h2><a href={localePath(lang, '/projects/')}>{t.featured.all}<Icon name="arrow" /></a></div>
   <div class="cards">
-    {projects.map((p) => <ProjectCard lang={lang} slug={p.slug} {...p.data} />)}
+    {projects.map((p) => <ProjectCard lang={lang} slug={p.slug} fb={p.fb} {...p.data} />)}
   </div>
 </section>
 

@@ -6,7 +6,6 @@ stats: [["3,48×", "ResNet-18 INT8 против FP32, OpenVINO"], ["2,6 мс", "
 tags: [PyTorch, ONNX Runtime, OpenVINO, NNCF]
 repo: https://github.com/diyor-ai/cpu-inference-bench
 ---
-<!-- REVIEW: translation -->
 ## Задача
 Сравнивать фреймворки на ноутбучном CPU легко неправильно: ограничения по мощности и температуре меняют частоту прямо во время замеров. Мне нужны были цифры INT8 и FP32 для PyTorch, ONNX Runtime и OpenVINO, которым можно доверять и которые можно воспроизвести.
 

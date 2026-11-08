@@ -2,20 +2,22 @@
 import Icon from './Icon.astro';
 import { localePath, type Lang, getT } from '../i18n/utils';
 import { repoUpdated, commitDate } from '../lib/github';
-interface Props { lang: Lang; slug: string; title: string; summary: string; stats: [string, string][]; tags: string[]; repo: string; repoLabel?: string }
-const { lang, slug, title, summary, stats, tags, repo, repoLabel } = Astro.props;
+interface Props { lang: Lang; slug: string; title: string; summary: string; stats: [string, string][]; tags: string[]; repo: string; repoLabel?: string; fb?: boolean }
+const { lang, slug, title, summary, stats, tags, repo, repoLabel, fb = false } = Astro.props;
+// Untranslated projects are shown in English and link to the English page.
+const href = localePath(fb ? 'en' : lang, `/projects/${slug}/`);
 const t = getT(lang);
 const updated = await repoUpdated(repo);
 ---
-<article class="card">
-  <h3><a class="card-title" href={localePath(lang, `/projects/${slug}/`)}>{title}</a></h3>
+<article class="card" lang={fb ? 'en' : undefined}>
+  <h3><a class="card-title" href={href}>{title}</a>{fb && <span class="badge" lang={t.htmlLang}>{t.blog.englishLabel}</span>}</h3>
   <p class="muted summary">{summary}</p>
   <ul class="metrics">{stats.map(([n, l]) => <li><strong>{n}</strong><span>{l}</span></li>)}</ul>
   <ul class="tags">{tags.map((x) => <li>{x}</li>)}</ul>
-  <div class="card-foot">
+  <div class="card-foot" lang={fb ? t.htmlLang : undefined}>
     {updated && <p class="updated muted"><time datetime={updated}>{t.projectsPage.updated.replace('{x}', commitDate(updated))}</time></p>}
   <p class="card-links">
-    <a href={localePath(lang, `/projects/${slug}/`)}>{t.featured.details}<Icon name="arrow" /></a>
+    <a href={href}>{t.featured.details}<Icon name="arrow" /></a>
     <a href={repo} rel="noopener">{repoLabel ?? t.featured.repo}</a>
   </p>
   </div>

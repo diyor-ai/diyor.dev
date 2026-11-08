@@ -1,20 +1,19 @@
 ---
 title: CPU Inference Benchmark
-summary: Bitta noutbuk CPU’sida PyTorch, ONNX Runtime va OpenVINO, FP32 va INT8 taqqoslanadi, o‘lchash metodi nazorat ostida.
+summary: Bitta noutbuk CPU’sida PyTorch, ONNX Runtime va OpenVINO’ning FP32 va INT8 variantlari nazorat qilinadigan o‘lchash usuli bilan taqqoslandi.
 order: 1
 stats: [["3.48×", "ResNet-18 INT8 va FP32, OpenVINO"], ["2.6 ms", "OpenVINO INT8, batch 1"]]
 tags: [PyTorch, ONNX Runtime, OpenVINO, NNCF]
 repo: https://github.com/diyor-ai/cpu-inference-bench
 ---
-<!-- REVIEW: translation -->
 ## Muammo
 Noutbuk CPU’sida frameworklarni taqqoslashda xatoga yo‘l qo‘yish oson: quvvat va termal chegaralar ish davomida chastotani o‘zgartirib turadi. Men PyTorch, ONNX Runtime va OpenVINO uchun ishonish va takrorlash mumkin bo‘lgan INT8 va FP32 raqamlarini olmoqchi edim.
 
 ## Nima qildim
-Intel i7-12650H’da ResNet-18 va ikkita kichik SST-2 BERT oilasi modelini (DistilBERT va BERT-mini) benchmark qildim; faqat 6 ta P-yadro ishlatildi, ular qat’iy 2.6 GHz chastotada qotirilgan. ONNX Runtime, OpenVINO NNCF va PyTorch yordamida INT8 post-training quantization (statik va dinamik) qo‘lladim, profillash uchun `torch.profiler`, ONNX Runtime profiling va OpenVINO `PERF_COUNT` ishlatdim. Loyiha doirasi — inference, kvantlash va profillash; o‘qitish kirmaydi.
+Intel i7-12650H’da ResNet-18 hamda SST-2 uchun ikkita kichik BERT modelini (DistilBERT va BERT-mini) benchmark qildim; faqat 6 ta P-yadro ishlatildi, ular qat’iy 2.6 GHz chastotada qotirilgan. ONNX Runtime, OpenVINO NNCF va PyTorch yordamida INT8 post-training quantization (statik va dinamik) qo‘lladim, profillash uchun `torch.profiler`, ONNX Runtime profiling va OpenVINO `PERF_COUNT` ishlatdim. Loyiha doirasi — inference, quantization va profillash; o‘qitish kirmaydi.
 
 ## Metod
-Birinchi, nazoratsiz urinishim yaroqsiz bo‘ldi: takrorlangan 18 qatordan 12 tasida ikki bir xil ishga tushirish orasidagi farq 5% dan oshdi. 3000 MHz’dagi pilot ham 4 qatordan 2 tasida termal-throttle hisoblagichlarini oshirdi. Yakuniy ishga tushirishlarda qat’iy chastota, qotirilgan yadrolar, har takrordan oldin sovitish va barqarorlik qoidasi qo‘llanadi: qator faqat tarqoqligi 5% dan kam bo‘lsa va hech bir throttle hisoblagichi oshmagan bo‘lsagina barqaror hisoblanadi. Nisbatlar faqat barqaror qatorlar orasida chiqariladi. Aniqlik o‘zgarishlari paired bootstrap va McNemar testi bilan baholandi, BERT taqqoslashlarida Bonferroni tuzatishi qo‘llandi.
+Birinchi nazoratsiz urinishim yaroqsiz bo‘ldi: takrorlangan 18 qatordan 12 tasida ikki bir xil ishga tushirish orasidagi farq 5% dan oshdi. 3000 MHz’dagi pilot ham 4 qatordan 2 tasida termal-throttle hisoblagichlarini oshirdi. Yakuniy ishga tushirishlarda qat’iy chastota, qotirilgan yadrolar, har takrordan oldin sovitish va barqarorlik qoidasi qo‘llanadi: qator faqat tarqoqligi 5% dan kam bo‘lsa va hech bir throttle hisoblagichi oshmagan bo‘lsagina barqaror hisoblanadi. Nisbatlar faqat barqaror qatorlar orasida chiqariladi. Aniqlik o‘zgarishlari paired bootstrap va McNemar testi bilan baholandi, BERT taqqoslashlarida Bonferroni tuzatishi qo‘llandi.
 
 ## Natijalar
 - ResNet-18, batch 1’da INT8 va FP32: PyTorch **2.34×**, ONNX Runtime **2.74×**, OpenVINO **3.48×**. OpenVINO INT8 bitta rasmga **2.6 ms** ga yetadi.
@@ -54,7 +53,7 @@ Grafiklar repozitoriy README’sidan; rasmlardagi matn inglizcha.
 *INT8 aniqligining FP32 ga nisbatan o‘zgarishi (juftlangan, bir xil namunalar): top-1 farqi foiz punktlarida, 95% paired-bootstrap ishonch oraliqlari bilan. p-qiymatlar aniq McNemar testi; BERT qatorlarida Bonferroni bilan tuzatilgan qiymat ham berilgan.*
 
 ## Cheklovlar
-- Har bir frameworkning standart INT8 yo‘li taqqoslanadi, bir xil kvantlash emas. Masalan, BERT’da OpenVINO e’tibor (attention) MatMul’larini ham kvantlaydi.
+- Har bir frameworkning standart INT8 yo‘li taqqoslanadi, bir xil quantization emas. Masalan, BERT’da OpenVINO e’tibor (attention) MatMul’larini ham quantize qiladi.
 - Tezlashuv sababini (masalan, VNNI) tekshirmadim. Kernel nomlari buni hal qilmaydi.
 - Bitta noutbuk, bitta CPU, eng yuqori emas, barqaror 2.6 GHz chastota. ResNet-18 aniqligi 1000 ta rasmlik tanlanmada o‘lchangan.
 - Barcha ishga tushirishlar davomida VPN klienti ishlab turdi; uning ta’siri o‘lchanmagan.
