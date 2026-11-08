@@ -14,5 +14,5 @@ const d = entry.data;
   <ul class="metrics inline">{d.stats.map(([n, l]: string[]) => <li><strong>{n}</strong><span>{l}</span></li>)}</ul>
   <ul class="tags">{d.tags.map((x: string) => <li>{x}</li>)}</ul>
   <p class="actions-row"><a class="btn" href={d.repo} rel="noopener"><Icon name="github" />{d.repoLabel ?? t.projectsPage.repoLabel}</a></p>
-  <div class="prose"><Content /></div>
+  <div class:list={['prose', { figcards: ['cpu-inference-bench', 'sst-baselines'].includes(entry.slug) }]}><Content /></div>
 </article>

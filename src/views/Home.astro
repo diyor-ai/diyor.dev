@@ -14,7 +14,7 @@ const projects = await getProjects(lang);
 <section class="hero">
   <div class="wrap hero-grid">
     <HandMotif />
-    <Image class="photo" src={photo} alt={t.hero.photoAlt} width={440} height={660} format="webp" quality={70} loading="eager" densities={[1]} />
+    <Image class="photo" src={photo} alt={t.hero.photoAlt} width={440} height={660} format="webp" quality={70} loading="eager" fetchpriority="high" densities={[1]} />
     <div class="hero-text">
       <h1>{t.hero.name}</h1>
       <p class="headline">{t.hero.headline}</p>
