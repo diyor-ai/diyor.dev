@@ -3,7 +3,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Icon from '../components/Icon.astro';
 import { getT, type Lang } from '../i18n/utils';
 import { getProjects } from '../lib/content';
-import { repoUpdated, relativeTime } from '../lib/github';
+import { repoUpdated, commitDate } from '../lib/github';
 const { lang } = Astro.props as { lang: Lang };
 const t = getT(lang);
 const projects = await getProjects(lang);
@@ -19,7 +19,7 @@ const others = await Promise.all(t.projectsPage.otherItems.map(async (o) => ({ .
     {others.map((o) => (
       <li class="row">
         <div><h3>{o.title}</h3><p class="muted">{o.summary}</p></div>
-        <p class="row-meta"><span class="mono">{o.stats}</span>{o.updated && <time class="updated muted" datetime={o.updated} title={o.updated.slice(0, 10)}>{t.projectsPage.updated.replace('{x}', relativeTime(o.updated, lang))}</time>}<a href={o.repo} rel="noopener"><Icon name="github" /><span>{t.projectsPage.otherLink}</span></a></p>
+        <p class="row-meta"><span class="mono">{o.stats}</span>{o.updated && <time class="updated muted" datetime={o.updated}>{t.projectsPage.updated.replace('{x}', commitDate(o.updated))}</time>}<a href={o.repo} rel="noopener"><Icon name="github" /><span>{t.projectsPage.otherLink}</span></a></p>
       </li>
     ))}
   </ul>

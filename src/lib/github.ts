@@ -1,5 +1,3 @@
-import type { Lang } from '../i18n/utils';
-
 // Build-time only: runs while Astro renders pages, never in the browser.
 // Any failure (network, rate limit, odd response) logs a warning and yields null, so the build still succeeds.
 const cache: Map<string, Promise<string | null>> = ((globalThis as any).__repoUpdated ??= new Map());
@@ -28,13 +26,5 @@ async function fetchLastCommit(key: string): Promise<string | null> {
   }
 }
 
-const locale: Record<Lang, string> = { en: 'en', zh: 'zh-CN', ru: 'ru', uz: 'uz' };
-
-/** Relative to build time, e.g. "3 days ago" / "3天前" / "3 дня назад". */
-export function relativeTime(iso: string, lang: Lang, now = Date.now()): string {
-  const days = Math.max(0, Math.floor((now - Date.parse(iso)) / 86_400_000));
-  const rtf = new Intl.RelativeTimeFormat(locale[lang], { numeric: 'auto' });
-  if (days < 30) return rtf.format(-days, 'day');
-  if (days < 365) return rtf.format(-Math.floor(days / 30), 'month');
-  return rtf.format(-Math.floor(days / 365), 'year');
-}
+/** Absolute, language-neutral date (YYYY-MM-DD) of the last commit; unlike "3 days ago" it never goes stale between deploys. */
+export const commitDate = (iso: string): string => iso.slice(0, 10);

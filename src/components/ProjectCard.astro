@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import { localePath, type Lang, getT } from '../i18n/utils';
-import { repoUpdated, relativeTime } from '../lib/github';
+import { repoUpdated, commitDate } from '../lib/github';
 interface Props { lang: Lang; slug: string; title: string; summary: string; stats: [string, string][]; tags: string[]; repo: string; repoLabel?: string }
 const { lang, slug, title, summary, stats, tags, repo, repoLabel } = Astro.props;
 const t = getT(lang);
@@ -13,7 +13,7 @@ const updated = await repoUpdated(repo);
   <ul class="metrics">{stats.map(([n, l]) => <li><strong>{n}</strong><span>{l}</span></li>)}</ul>
   <ul class="tags">{tags.map((x) => <li>{x}</li>)}</ul>
   <div class="card-foot">
-    {updated && <p class="updated muted"><time datetime={updated} title={updated.slice(0, 10)}>{t.projectsPage.updated.replace('{x}', relativeTime(updated, lang))}</time></p>}
+    {updated && <p class="updated muted"><time datetime={updated}>{t.projectsPage.updated.replace('{x}', commitDate(updated))}</time></p>}
   <p class="card-links">
     <a href={localePath(lang, `/projects/${slug}/`)}>{t.featured.details}<Icon name="arrow" /></a>
     <a href={repo} rel="noopener">{repoLabel ?? t.featured.repo}</a>

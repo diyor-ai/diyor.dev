@@ -31,7 +31,7 @@
   },
   "projectsPage": {
     "title": "Loyihalar", "intro": "O‘lchangan natijalari va cheklovlari bilan to‘rtta asosiy loyiha, shuningdek kichikroq loyihalar.", "other": "Boshqa loyihalar", "back": "Barcha loyihalar",
-    "updated": "Yangilangan: {x}", "repoLabel": "Repozitoriy", "otherLink": "GitHub",
+    "updated": "Oxirgi commit: {x}", "repoLabel": "Repozitoriy", "otherLink": "GitHub",
     "otherItems": [
       { "title": "Ames House Price", "summary": "Nested cross-validation bilan ma’lumot sizib o‘tishidan himoyalangan narx bashorati. Test to‘plamidagi eng yomon 10 ta uy kvadrat logarifmik xatoning 49% ini tashkil qiladi.", "stats": "Test MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
       { "title": "Pro-Bot", "summary": "Uch tilli Telegram do‘kon boti, ma’lumotlar bazasi sifatida Google Sheets ishlatiladi.", "stats": "82 ta test · CI", "repo": "https://github.com/diyor-ai/pro-bot" }
