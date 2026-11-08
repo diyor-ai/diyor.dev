@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { getT, localePath, locales } from '../i18n/utils';
 const en = getT('en');
 ---
-<Base lang="en" title={en.meta.notFoundTitle} description={en.notFound.text} path="/404.html" langs={['en']} rss={false}>
+<Base lang="en" title={en.meta.notFoundTitle} description={en.notFound.text} path="/404.html" langs={['en']} rss={false} noindex>
   <section class="wrap page narrow">
     {locales.map((l) => {
       const n = getT(l).notFound;

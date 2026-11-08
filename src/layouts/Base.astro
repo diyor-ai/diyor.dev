@@ -2,8 +2,8 @@
 import '../styles/global.css';
 import { getT, locales, hreflangOf, labelOf, localePath, type Lang } from '../i18n/utils';
 import { SITE } from '../config';
-interface Props { lang: Lang; title: string; description: string; path: string; langs?: Lang[]; jsonLd?: object; type?: string; rss?: boolean; ogPath?: string }
-const { lang, title, description, path, langs = [...locales], jsonLd, type = 'website', rss = true, ogPath = '/og.png' } = Astro.props;
+interface Props { lang: Lang; title: string; description: string; path: string; langs?: Lang[]; jsonLd?: object; type?: string; rss?: boolean; ogPath?: string; noindex?: boolean }
+const { lang, title, description, path, langs = [...locales], jsonLd, type = 'website', rss = true, ogPath = '/og.png', noindex = false } = Astro.props;
 const t = getT(lang);
 const fullTitle = path === '/' ? title : `${title} · diyor.dev`;
 const url = SITE + localePath(lang, path);
@@ -18,14 +18,15 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p));
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={url} />
-  {langs.map((l) => <link rel="alternate" hreflang={hreflangOf[l]} href={SITE + localePath(l, path)} />)}
-  <link rel="alternate" hreflang="x-default" href={SITE + localePath('en', path)} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {!noindex && <link rel="canonical" href={url} />}
+  {!noindex && langs.map((l) => <link rel="alternate" hreflang={hreflangOf[l]} href={SITE + localePath(l, path)} />)}
+  {!noindex && <link rel="alternate" hreflang="x-default" href={SITE + localePath('en', path)} />}
   <meta property="og:type" content={type} />
   <meta property="og:site_name" content="diyor.dev" />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:url" content={url} />
+  {!noindex && <meta property="og:url" content={url} />}
   <meta property="og:image" content={ogImage} />
   <meta property="og:locale" content={t.ogLocale} />
   <meta name="twitter:card" content="summary_large_image" />
