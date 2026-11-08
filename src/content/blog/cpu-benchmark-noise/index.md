@@ -12,7 +12,7 @@ All numbers come from the repo's README (including its "First attempt (archived)
 
 ## The first attempt was invalid
 
-I started by running ResNet-18 on PyTorch, ONNX Runtime and OpenVINO with default settings on a laptop CPU (Intel i7-12650H). To check repeatability I ran each configuration twice. In 12 of 18 repeated rows, the two identical runs differed by more than 5%, up to 48% for one row (PyTorch, 12 threads, batch 1). The results were not usable as a comparison, so I archived them.
+I started by running ResNet-18 on PyTorch, ONNX Runtime and OpenVINO with default settings on a laptop CPU (Intel i7-12650H). To check repeatability I ran each configuration twice. In 12 of 18 repeated rows, the two identical runs differed by more than 5%, up to 48.27% for one row (PyTorch, 12 threads, batch 1). The results were not usable as a comparison, so I archived them.
 
 A laptop has package power and thermal limits, so the clock changes during a run. Without control over that, a difference of a few percent between frameworks would be within the noise.
 
@@ -40,7 +40,7 @@ Speedup ratios are printed only between two stable rows. Unstable rows are shown
 
 ## What this gave me
 
-With these controls, ResNet-18 INT8 vs FP32 at batch 1 came out at 2.34× (PyTorch), 2.74× (ONNX Runtime) and 3.48× (OpenVINO, 2.6 ms). Five of 36 BERT rows and 2 of 18 ResNet INT8 rows were still unstable, and the README says so.
+With these controls, ResNet-18 INT8 vs FP32 at batch 1 came out at 2.34× (PyTorch), 2.74× (ONNX Runtime) and 3.48× (OpenVINO, 2.6 ms). Five of 36 BERT rows and 2 of 18 ResNet rows (both FP32) were still unstable, and the README says so.
 
 ## What it does not show
 
