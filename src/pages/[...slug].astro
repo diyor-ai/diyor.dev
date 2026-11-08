@@ -15,12 +15,16 @@ import { SITE, GITHUB, LINKEDIN } from '../config';
 export async function getStaticPaths() {
   const out: any[] = [];
   const posts = await getPosts();
+  const projectsByLang = Object.fromEntries(await Promise.all(locales.map(async (l) => [l, await getProjects(l)]))) as Record<Lang, Awaited<ReturnType<typeof getProjects>>>;
   for (const lang of locales) {
     const add = (slug: string | undefined, props: any) =>
       out.push({ params: { slug: lang === 'en' ? slug : slug ? `${lang}/${slug}` : lang }, props: { lang, ...props } });
     add(undefined, { view: 'home', path: '/' });
     add('projects', { view: 'projects', path: '/projects/' });
-    for (const p of await getProjects(lang)) add(`projects/${p.slug}`, { view: 'project', path: `/projects/${p.slug}/`, entry: p });
+    for (const p of await getProjects(lang)) {
+      const langs = locales.filter((l) => projectsByLang[l].some((x) => x.slug === p.slug));
+      add(`projects/${p.slug}`, { view: 'project', path: `/projects/${p.slug}/`, entry: p, langs });
+    }
     add('experience', { view: 'experience', path: '/experience/' });
     add('blog', { view: 'blogList', path: '/blog/' });
     for (const p of posts.filter((x) => x.lang === lang)) {

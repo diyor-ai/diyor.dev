@@ -1,6 +1,6 @@
 # diyor.dev
 
-Personal portfolio of Mukhammaddiyor Abdulazimov. Astro, static output, TypeScript, plain CSS, 3 languages: English (`/`), Chinese (`/zh/`), Russian (`/ru/`). No third-party requests at runtime.
+Personal portfolio of Mukhammaddiyor Abdulazimov. Astro, static output, TypeScript, plain CSS, 4 languages: English (`/`), Chinese (`/zh/`), Russian (`/ru/`), Uzbek (`/uz/`). No third-party requests at runtime.
 
 ## Run
     npm install
@@ -9,7 +9,7 @@ Personal portfolio of Mukhammaddiyor Abdulazimov. Astro, static output, TypeScri
     npx astro check
 
 ## Structure
-- `src/i18n/{en,zh,ru}.json`: all UI strings, skills, experience, contact text.
+- `src/i18n/{en,zh,ru,uz}.json`: all UI strings, skills, experience, contact text.
 - `src/content/projects/<slug>/index.md`, `index.zh.md`, `index.ru.md`: project cards and detail pages.
 - `src/content/blog/<slug>/index.md`, `index.zh.md`, `index.ru.md` + images in the same folder.
 - `src/config.ts`: email, links, `UPWORK` (null hides the row), `SHOW_CV`.

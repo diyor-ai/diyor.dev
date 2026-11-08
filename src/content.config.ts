@@ -2,8 +2,8 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-// One folder per entry: <slug>/index.md (EN), index.zh.md, index.ru.md. Images live next to them.
-const base = (dir: string) => glob({ pattern: '**/index{,.zh,.ru}.md', base: `./src/content/${dir}` });
+// One folder per entry: <slug>/index.md (EN), index.zh.md, index.ru.md, index.uz.md. Images live next to them.
+const base = (dir: string) => glob({ pattern: '**/index{,.zh,.ru,.uz}.md', base: `./src/content/${dir}` });
 
 const projects = defineCollection({
   loader: base('projects'),

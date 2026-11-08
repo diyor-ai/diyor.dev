@@ -1,0 +1,71 @@
+{
+  "htmlLang": "uz", "ogLocale": "uz_UZ",
+  "nav": { "projects": "Loyihalar", "experience": "Tajriba", "blog": "Blog", "contact": "Aloqa" },
+  "menu": "Menyu", "theme": "Yorug‘/qorong‘i mavzuni almashtirish", "skip": "Asosiy qismga o‘tish", "langLabel": "Til",
+  "meta": {
+    "homeTitle": "Mukhammaddiyor Abdulazimov · AI talabasi, ML inference va full-stack",
+    "homeDesc": "Harbin muhandislik universitetida AI talabasi. CPU inference benchmarklari, takrorlanuvchi ML baholashlari va 2+ yillik full-stack tajriba. Amaliyotga ochiq.",
+    "projectsTitle": "Loyihalar", "projectsDesc": "CPU inference benchmarki, SST baselinelari, RoadAI case study va imo-ishora bilan boshqarish tizimi: aniq raqamlar va cheklovlar bilan.",
+    "experienceTitle": "Tajriba", "experienceDesc": "Kadirov.DEV’dagi full-stack shogirdlik, mustaqil loyihalar va Harbin muhandislik universitetidagi ta’lim.",
+    "blogTitle": "Blog", "blogDesc": "Benchmarking, baholash va ML tizimlarini qurish haqida qaydlar.",
+    "contactTitle": "Aloqa", "contactDesc": "Mukhammaddiyor Abdulazimov uchun email, GitHub, LinkedIn va WeChat.",
+    "nowTitle": "Hozir", "nowDesc": "Mukhammaddiyor Abdulazimov hozir nima bilan shug‘ullanmoqda: o‘qish, yakunlangan SST Baselines LSTM tajribasi va amaliyot izlash.",
+    "notFoundTitle": "Sahifa topilmadi"
+  },
+  "hero": {
+    "name": "Mukhammaddiyor Abdulazimov",
+    "headline": "Harbin muhandislik universitetida AI talabasi · ML inference va full-stack",
+    "intro": "Harbin muhandislik universitetida sun’iy intellekt yo‘nalishi (ingliz tilida o‘qitiladi) 3-kurs talabasi. Modellarni CPU’da inference uchun benchmark qilaman va kvantlayman, takrorlanuvchi ML baholashlarini quraman, real mijoz loyihalarida 2+ yillik full-stack tajribam bor. AI/ML va full-stack amaliyotlariga ochiqman.",
+    "cv": "CV’ni yuklab olish", "projects": "Loyihalarni ko‘rish", "contact": "Aloqa", "photoAlt": "Mukhammaddiyor Abdulazimov portreti"
+  },
+  "social": { "github": "GitHub", "linkedin": "LinkedIn", "email": "Email" },
+  "featured": { "title": "Tanlangan loyihalar", "all": "Barcha loyihalar", "details": "Batafsil", "repo": "GitHub" },
+  "skills": {
+    "title": "Ko‘nikmalar",
+    "groups": [
+      { "name": "Tillar va frameworklar", "items": ["Python", "FastAPI", "React", "Flutter", "PHP", "TypeScript", "Laravel", "Symfony", "Vue.js", "Tailwind CSS"] },
+      { "name": "ML / AI", "items": ["PyTorch", "ONNX Runtime", "OpenVINO", "NNCF", "INT8 quantization", "MediaPipe", "OpenCV"] },
+      { "name": "Ma’lumotlar va baholash", "items": ["Paired bootstrap", "McNemar test", "Nested cross-validation", "Ridge regression", "Profiling"] },
+      { "name": "Asboblar va platformalar", "items": ["PostgreSQL", "Git", "GitHub", "CI", "Claude Code", "Docker", "MySQL", "Redis"] }
+    ]
+  },
+  "projectsPage": {
+    "title": "Loyihalar", "intro": "O‘lchangan natijalari va cheklovlari bilan to‘rtta asosiy loyiha, shuningdek kichikroq loyihalar.", "other": "Boshqa loyihalar", "back": "Barcha loyihalar",
+    "updated": "Yangilangan: {x}", "repoLabel": "Repozitoriy", "otherLink": "GitHub",
+    "otherItems": [
+      { "title": "Ames House Price", "summary": "Nested cross-validation bilan ma’lumot sizib o‘tishidan himoyalangan narx bashorati. Test to‘plamidagi eng yomon 10 ta uy kvadrat logarifmik xatoning 49% ini tashkil qiladi.", "stats": "Test MAE $16,391 · R² 0.875 · RMSLE 0.136", "repo": "https://github.com/diyor-ai/house-price-prediction" },
+      { "title": "Pro-Bot", "summary": "Uch tilli Telegram do‘kon boti, ma’lumotlar bazasi sifatida Google Sheets ishlatiladi.", "stats": "82 ta test · CI", "repo": "https://github.com/diyor-ai/pro-bot" }
+    ]
+  },
+  "experience": {
+    "title": "Tajriba", "intro": "Ish, loyihalar va ta’lim.", "education": "Ta’lim", "stackLabel": "Stek:", "liveLink": "Jonli sayt",
+    "items": [
+      { "period": "2026-yil sentyabr – hozirgacha", "title": "RoadAI", "org": "Mustaqil loyiha", "text": "AI yordamida voucherlardan ma’lumot ajratib olish imkoniyatiga ega transfer operatsiyalari platformasi. Texnik topshiriq, arxitektura, kod ko‘rigi va qurilmada sinov menga tegishli; kodning ko‘p qismi Claude Code yordamida yozilgan.", "links": [{ "label": "Case study", "url": "https://github.com/diyor-ai/roadai-case-study" }] },
+      { "period": "2023-yil mart – 2025-yil avgust (2024-yil sentyabrdan masofaviy, qisman bandlik)", "title": "Full-stack shogirdlik", "org": "Kadirov.DEV", "text": "Pullik mijoz loyihalarida ishlashni o‘z ichiga olgan shogirdlik. Real mijoz loyihalarida 2+ yillik full-stack tajriba.",
+        "stack": ["PHP", "Laravel", "Symfony", "Vue.js", "MySQL", "Tailwind CSS"],
+        "projects": [
+          { "name": "Parrandachilik fermasini boshqarish tizimi", "role": "Backend va frontend", "url": null },
+          { "name": "Boshqar.com", "role": "Frontend", "url": "https://boshqar.com/uz/promo" },
+          { "name": "AstraCode", "role": "Frontend va backend", "url": "https://astracode.ai/" },
+          { "name": "QR orqali tekshiriladigan sertifikat platformasi", "role": "", "url": null }
+        ] },
+      { "period": "2022-yil noyabr – 2023-yil dekabr", "title": "Dasturlash kurslari", "org": "Kadirov.Dev", "text": "Sertifikatli kurs. 2022-yildan beri kod yozaman." }
+    ],
+    "edu": {
+      "school": "Harbin muhandislik universiteti (HEU)", "program": "Ingliz tilida o‘qitiladigan dastur", "period": "2024-yil sentyabr – 2028-yil iyun (3-kurs)",
+      "degree": "Sun’iy intellekt bo‘yicha bakalavr darajasi (2028-yil iyunda kutilmoqda)",
+      "points": ["2024-yilgi AI guruhining sinf sardori.", "HEU Madaniyat festivali 2026’da O‘zbekiston taqdimotiga rahbarlik qildim.", "Intizom mukofoti (勤学守纪奖), 2024–2025 kuzgi semestr, HEU Xalqaro hamkorlik ta’limi kolleji (2025-yil fevral)."],
+      "courseworkTitle": "O‘quv fanlari",
+      "coursework": ["Intro to AI", "Machine Learning", "AI Ethics", "Calculus I–II", "Linear Algebra", "Probability & Statistics", "Discrete Math", "Circuits", "Physics", "Python OOP", "Robotics", "Digital Signal Processing"]
+    }
+  },
+  "blog": { "title": "Blog", "intro": "Benchmarking va baholash haqida qaydlar.", "empty": "Hozircha maqolalar yo‘q.", "back": "Barcha maqolalar", "rss": "RSS", "englishLabel": "English", "notTranslated": "Bu maqola ushbu tilda mavjud emas." },
+  "contact": {
+    "title": "Aloqa", "intro": "Men bilan bog‘lanishning eng yaxshi usuli — email.", "email": "Email", "copy": "Nusxalash", "copied": "Nusxalandi", "github": "GitHub", "linkedin": "LinkedIn",
+    "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "WeChat QR kodi", "upwork": "Upwork", "availability": "Semestr davomida haftasiga 24–30 soat amaliyot uchun bo‘shman."
+  },
+  "now": { "title": "Hozir", "updated": "Yangilangan:", "lines": ["Men Harbin muhandislik universitetida (HEU) AI yo‘nalishi 3-kurs talabasiman va shu semestrdagi o‘quv topshiriqlarini yakunlayapman.", "Yaqinda <a href=\"{sst}\">SST Baselines</a> uchun kichik LSTM tajribasini yakunladim; natijalar loyiha sahifasida.", "AI/ML va full-stack amaliyotlariga hujjat topshiryapman.", "Masofaviy ishga ochiqman."] },
+  "notFound": { "title": "Sahifa topilmadi", "text": "Bunday sahifa mavjud emas.", "home": "Bosh sahifaga o‘tish" },
+  "footer": "Mukhammaddiyor Abdulazimov · Harbin, Xitoy",
+  "ai": "Kod Claude Code yordamida yozilgan; metodologiya, qarorlar va tekshiruv menga tegishli."
+}

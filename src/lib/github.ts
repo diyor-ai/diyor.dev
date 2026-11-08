@@ -28,7 +28,7 @@ async function fetchLastCommit(key: string): Promise<string | null> {
   }
 }
 
-const locale: Record<Lang, string> = { en: 'en', zh: 'zh-CN', ru: 'ru' };
+const locale: Record<Lang, string> = { en: 'en', zh: 'zh-CN', ru: 'ru', uz: 'uz' };
 
 /** Relative to build time, e.g. "3 days ago" / "3天前" / "3 дня назад". */
 export function relativeTime(iso: string, lang: Lang, now = Date.now()): string {
