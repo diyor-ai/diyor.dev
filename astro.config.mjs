@@ -1,9 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { satteri } from '@astrojs/markdown-satteri';
+import { figureLinks } from './src/lib/figure-links.mjs';
 
 export default defineConfig({
   site: 'https://diyor.dev',
+  markdown: { processor: satteri({ hastPlugins: [figureLinks] }) },
   integrations: [
     sitemap({
       i18n: { defaultLocale: 'en', locales: { en: 'en', zh: 'zh-CN', ru: 'ru', uz: 'uz' } },
