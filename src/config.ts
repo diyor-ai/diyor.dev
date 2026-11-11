@@ -9,4 +9,4 @@ export const UPWORK: string | null = null;
 export const SHOW_CV = true;
 export const CV_FILES: Record<string, string> = { en: '/cv/cv-en.pdf', zh: '/cv/cv-zh.pdf', ru: '/cv/cv-en.pdf', uz: '/cv/cv-en.pdf' };
 /** Date shown on /now. Edit it by hand whenever the page content is actually updated. */
-export const NOW_UPDATED = '2026-11-07';
+export const NOW_UPDATED = '2026-11-11';

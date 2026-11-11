@@ -9,7 +9,7 @@
     "experienceTitle": "Tajriba", "experienceDesc": "Kadirov.DEV’dagi full-stack shogirdlik, mustaqil loyihalar va Harbin muhandislik universitetidagi ta’lim.",
     "blogTitle": "Blog", "blogDesc": "Benchmarking, baholash va ML tizimlarini qurish haqida qaydlar.",
     "contactTitle": "Aloqa", "contactDesc": "Mukhammaddiyor Abdulazimov bilan bog‘lanish: email, GitHub, LinkedIn va WeChat.",
-    "nowTitle": "Hozir", "nowDesc": "Mukhammaddiyor Abdulazimov hozir nima bilan shug‘ullanmoqda: o‘qish, yakunlangan SST Baselines LSTM tajribasi va amaliyot izlash.",
+    "nowTitle": "Hozir", "nowDesc": "Mukhammaddiyor Abdulazimov hozir nima bilan shug‘ullanmoqda: o‘qish, SST Baselines’dagi so‘nggi tajribalar va amaliyot izlash.",
     "notFoundTitle": "Sahifa topilmadi"
   },
   "hero": {
@@ -64,7 +64,7 @@
     "title": "Aloqa", "intro": "Men bilan bog‘lanishning eng yaxshi usuli — email.", "email": "Email", "copy": "Nusxalash", "copied": "Nusxalandi", "github": "GitHub", "linkedin": "LinkedIn",
     "wechat": "WeChat", "wechatId": "WeChat ID", "qrAlt": "WeChat QR kodi", "upwork": "Upwork", "availability": "Semestr davomida haftasiga 24–30 soat amaliyot uchun bo‘shman."
   },
-  "now": { "title": "Hozir", "updated": "Yangilangan:", "lines": ["Men Harbin muhandislik universitetida (HEU) AI yo‘nalishi 3-kurs talabasiman va shu semestrdagi o‘quv topshiriqlarini yakunlayapman.", "Yaqinda <a href=\"{sst}\">SST Baselines</a> uchun kichik LSTM tajribasini yakunladim; natijalar loyiha sahifasida.", "AI/ML va full-stack amaliyotlariga hujjat topshiryapman.", "Masofaviy ishga ochiqman."] },
+  "now": { "title": "Hozir", "updated": "Yangilangan:", "lines": ["Men Harbin muhandislik universitetida (HEU) AI yo‘nalishi 3-kurs talabasiman va shu semestrdagi o‘quv topshiriqlarini yakunlayapman.", "Yaqinda <a href=\"{sst}\">SST Baselines</a> ga fazoviy kontekst va butun hudud modellarini qo‘shdim; natijalar loyiha sahifasida.", "AI/ML va full-stack amaliyotlariga hujjat topshiryapman.", "Masofaviy ishga ochiqman."] },
   "notFound": { "title": "Sahifa topilmadi", "text": "Bunday sahifa mavjud emas.", "home": "Bosh sahifaga o‘tish" },
   "footer": "Mukhammaddiyor Abdulazimov · Harbin, Xitoy",
   "ai": "Kod Claude Code yordamida yozilgan; metodologiya, qarorlar va tekshiruv menga tegishli."

@@ -1,8 +1,8 @@
 ---
 title: SST Baselines
-summary: Shimoliy Tinch okeanining ikki hududida kunlik dengiz sirti harorati (NOAA OISST) uchun baselinelar, kichik LSTM va fazoviy kontekst modellari hamda takrorlanadigan baholash.
+summary: Shimoliy Tinch okeanining ikki hududida kunlik dengiz sirti harorati (NOAA OISST) uchun baselinelar, kichik LSTM, fazoviy kontekst va butun hudud (U-Net, ConvLSTM) modellari hamda takrorlanadigan baholash.
 order: 2
-stats: [["6", "baseline taqqoslandi"], ["79", "test"]]
+stats: [["6", "baseline taqqoslandi"], ["107", "test"]]
 tags: [Python, NOAA OISST, Ridge regression]
 repo: https://github.com/diyor-ai/sst-baselines
 ---
@@ -10,7 +10,7 @@ repo: https://github.com/diyor-ai/sst-baselines
 Dengiz sirti harorati (SST) bo‘yicha biror o‘qitiladigan modelni taqqoslashdan oldin, oddiy baselinelardan o‘zib ketish qanchalik qiyinligini bilish kerak. Bu — ana shu baselinelarni o‘rganish, operativ okean prognozi uchun model emas. Ish HEU’dagi o‘qituvchimning ruxsati bilan bajarildi.
 
 ## Nima qildim
-1982–2025 yillar uchun Tinch okeanining ikki hududida (Kuroshio va subtropik) NOAA OISST v2.1 kunlik SST uchun ma’lumotlar konveyeri va baholashni qurdim. ERDDAP’da har bir hududda 1,194 kun yetishmasdi; ularni tekshiruvlar bilan NOAA PSL’dan to‘ldirdim. Oltita baselineni taqqosladim: persistence, qat’iy tekislangan klimatologiya, anomaliya persistence, so‘nuvchi persistence, 10 yillik kunlik klimatologiya (OCN) va har bir to‘r nuqtasi uchun Ridge regression. Loyihada 79 ta test va CI bor.
+1982–2025 yillar uchun Tinch okeanining ikki hududida (Kuroshio va subtropik) NOAA OISST v2.1 kunlik SST uchun ma’lumotlar konveyeri va baholashni qurdim. ERDDAP’da har bir hududda 1,194 kun yetishmasdi; ularni tekshiruvlar bilan NOAA PSL’dan to‘ldirdim. Oltita baselineni taqqosladim: persistence, qat’iy tekislangan klimatologiya, anomaliya persistence, so‘nuvchi persistence, 10 yillik kunlik klimatologiya (OCN) va har bir to‘r nuqtasi uchun Ridge regression. Loyihada 107 ta test va CI bor.
 
 ## Metod
 Qat’iy bo‘linish: 1982–2015 — o‘qitish, 2016–2019 — validatsiya, 2020–2025 — test. Test to‘plami konfiguratsiya muzlatilib, git’da teglanganidan keyin bir marta ishga tushirildi.
@@ -36,6 +36,19 @@ Ogohlantirishlar: subtropik hududda Ridge-patch 1 va 7 kunda hamon anomaliya per
 ![B1-rasm. LSTM o‘rganish egri chiziqlari, nuqta va patch (validatsiya davri; nuqta — eng yaxshi epoxa).](./figB1_curves.png)
 *B1-rasm. LSTM o‘rganish egri chiziqlari, nuqta va patch (validatsiya davri; nuqta — eng yaxshi epoxa).*
 
+## Butun hudud modellari (B2)
+**Qisqacha:** test yillarida ikkala butun-hudud modeli ham 7 va 30 kunda ikkala hududda Ridge-patch’dan o‘zib ketdi, eng pasti U-Net; 1 kunda esa ikkalasi ham anomaliya persistence’dan yomonroq edi.
+
+Keyin butun hududni bir vaqtning o‘zida ko‘radigan modellar patch modellaridan o‘zib ketadimi, deb tekshirdim. Bitta model butun 48×48 hududni (30 kunlik anomaliya va yil kunining sin/cos qiymatlari) oladi va ichki 40×40 uchun uchala muddatni birdaniga prognoz qiladi: kichik U-Net (C = 32, 3 ta downsampling, GroupNorm) va ConvLSTM encoder-forecaster (C = 16; hisoblash resurslari tufayli birinchi spetsifikatsiyadan chetlanish, protokolda yozilgan). Har birining residual varianti ham bor (chiqish = oxirgi kirish anomaliyasi + tarmoq). Har bir hudud va model oilasi uchun validatsiyadagi o‘rtacha RMSE eng past bo‘lgan variant testga o‘tdi, tanlovni kod qildi: to‘rttala holatda residual variant. Ular faqat 1982–2015 yillarda (~12 ming namuna) o‘qitildi, erta to‘xtatish 2016–2019 yillarda, har biri 3 ta seed bilan. Protokollar modellar o‘qitilishidan oldin va test yillaridan foydalanishdan oldin yozilib, commit qilindi (teg `pre-b2-test`), 12 ta checkpoint bir marta sinaldi (2026-11-10), og‘irliklar xeshlari manifestlar bilan tekshirildi.
+
+**7 va 30 kunda**, testda (2020–2025), ikkala model ham ikkala hududda Ridge-patch’dan o‘zib ketdi, bunda farq bitta seed std’dan katta (Ridge-patch’ga nisbatan skill: U-Net Kuroshio +0.037 ± 0.006 va +0.049 ± 0.009, subtropik +0.077 ± 0.003 va +0.146 ± 0.020; ConvLSTM-ED Kuroshio +0.028 ± 0.007 va +0.031 ± 0.004, subtropik +0.067 ± 0.014 va +0.128 ± 0.008). Shu bo‘limda taqqoslangan to‘rt model (Ridge-patch, LSTM-patch, U-Net, ConvLSTM-ED) orasida U-Net 7 va 30 kunda ikkala hududda ham eng past test RMSE’ga ega bo‘ldi; masalan, subtropik hududda 30 kunda 0.470 °C, Ridge-patch’da esa 0.550 °C. U-Net oltita hudud/muddat kombinatsiyasining hammasida ConvLSTM-ED’dan past, lekin farq kichik (Kuroshio, 30 kun: 1.194 va 1.217 °C), parametrlar soni esa ~50 baravar ko‘p. Ridge-patch’dan yutuq 7 va 30 kunda subtropik hududda Kuroshio’dagidan kattaroq. LSTM-patch bilan solishtirganda o‘rtachalar barcha 12 ta model/hudud/muddat kombinatsiyasida musbat (U-Net +0.025 dan +0.124 gacha, ConvLSTM-ED +0.010 dan +0.118 gacha); 1 kundagi yutuqning bir qismi shundan iboratki, LSTM-patch testda 1 kunda yomon chiqqan edi (B1).
+
+**1 kunda** esa yo‘q. Ikkala butun-hudud modeli ham Ridge-patch’dan past (U-Net Kuroshio −0.043 ± 0.002, subtropik −0.017 ± 0.019; ConvLSTM-ED −0.050 ± 0.009, −0.032 ± 0.022) va to‘rttala holatda anomaliya persistence’dan ham yomonroq (masalan, U-Net: Kuroshio hududida 0.261 va 0.258 °C, subtropik hududda 0.125 va 0.122 °C).
+
+Validatsiya xulosalari musbat bo‘lgan joyda saqlandi: 7 va 30 kunda Ridge-patch’dan yutuqlar validatsiyada musbat edi va testda kattaroq. 1 kunda subtropik U-Net validatsiyada biroz musbat (+0.014) edi, testda esa manfiy.
+
+Ogohlantirishlar: C, variant va erta to‘xtatish validatsiya yillarida tanlangan. 4×10⁴–2×10⁶ parametr uchun ~12 ming kuchli avtokorrelyatsiyalangan o‘qitish namunasi bor, validatsiyadagi eng yaxshi epoxalar 2–8. Uchta seed faqat o‘qitish shovqinini o‘lchaydi, oltita test yilining tanlanma noaniqligini emas. Residual variant asosan 1 kunlik natijani tuzatadi va 7 hamda 30 kunda deyarli neytral (faqat validatsiya); tanlanmagan variant testda ishga tushirilmagan. O‘rganish tajribasi, okean prognozi modeli emas.
+
 ## Grafiklar
 Grafiklar repozitoriy README’sidan; rasmlardagi matn inglizcha.
 
@@ -58,8 +71,9 @@ Grafiklar repozitoriy README’sidan; rasmlardagi matn inglizcha.
 *LSTM o‘rganish egri chiziqlari.*
 
 ## Cheklovlar
-- Oddiy baselinelar, bitta kichik LSTM tajribasi va B1 fazoviy kontekst modellari (Ridge-patch, LSTM-patch), boshqa o‘qitiladigan narsa yo‘q. LSTM to‘liq 30 kunlik ketma-ketlik va yil kunini oladi, Ridge esa kamroq kirish oladi, shuning uchun LSTM yutug‘ining bir qismi modeldan emas, kirishlardan bo‘lishi mumkin; bu sinalmagan.
+- Oddiy baselinelar, bitta kichik LSTM tajribasi, B1 fazoviy kontekst modellari (Ridge-patch, LSTM-patch) va B2 butun hudud modellari (U-Net, ConvLSTM-ED), boshqa o‘qitiladigan narsa yo‘q. LSTM to‘liq 30 kunlik ketma-ketlik va yil kunini oladi, Ridge esa kamroq kirish oladi, shuning uchun LSTM yutug‘ining bir qismi modeldan emas, kirishlardan bo‘lishi mumkin; bu sinalmagan.
 - B1 faqat ikki hududdagi 5×5 patch, uchta seed va bitta test ishga tushirishdan foydalanadi; halo faqat kirishlarni beradi. Ba’zi Ridge alphalar to‘rning pastki chetida turadi (validatsiya egri chizig‘i tekis, o‘zgartirilmagan), validatsiya raqamlari esa biroz optimistik: alphalar va erta to‘xtatish validatsiya yillarida tanlangan.
+- B2: butun hudud tarmoqlari uchun ~12 ming o‘qitish namunasi, uchta seed va bitta test ishga tushirish; U-Net/ConvLSTM-ED’ning Ridge-patch’dan 7 va 30 kundagi ustunligi faqat ikki hududdagi oltita test yilida o‘lchangan.
 - Ikkita kichik hudud, bitta ma’lumotlar to‘plami.
 
 ## AI yordami
