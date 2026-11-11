@@ -8,6 +8,7 @@
 // Phase 1 inspects the real dist/. Phase 2 copies the project to a temp dir, deletes a few
 // translations, builds that copy and verifies the fallback behaviour. The real project is never modified.
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -237,6 +238,23 @@ console.log(`\nPhase 1: source parity (${ROOT})`);
 {
   const bad = walk(path.join(ROOT, 'src')).filter((f) => /\.(md|astro|json|ts)$/.test(f) && /REVIEW:\s*translation/.test(read(f))).map((f) => `${path.relative(ROOT, f)}: REVIEW marker in source`);
   report('no REVIEW markers in source', bad);
+}
+
+{
+  // public/figures/<slug>/<file> are the full-size files behind the click-to-enlarge links; each must be
+  // byte-identical to the source image in src/content/projects/<slug>/ that the thumbnail is built from.
+  const sha = (f) => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+  const bad = [];
+  const figDir = path.join(ROOT, 'public/figures');
+  for (const slug of fs.existsSync(figDir) ? fs.readdirSync(figDir) : []) {
+    for (const name of fs.readdirSync(path.join(figDir, slug))) {
+      const copy = path.join(figDir, slug, name);
+      const src = path.join(ROOT, 'src/content/projects', slug, name);
+      if (!fs.existsSync(src)) bad.push(`public/figures/${slug}/${name}: no source image src/content/projects/${slug}/${name} (orphan copy)`);
+      else if (sha(copy) !== sha(src)) bad.push(`public/figures/${slug}/${name} differs from src/content/projects/${slug}/${name} - stale copy; re-copy the source over it`);
+    }
+  }
+  report('full-size figure copies match their source images', bad);
 }
 
 console.log('\nPhase 2: built output (dist/)');
