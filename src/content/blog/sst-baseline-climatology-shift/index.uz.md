@@ -4,6 +4,8 @@ description: "Dengiz sirti haroratining baseline va baholash tadqiqotida klimato
 date: 2026-11-07
 draft: false
 ---
+> **Yangilanish (2026-yil 11-noyabr):** Ushbu maqoladan keyin men fazoviy kontekst (B1) va butun hudud (B2) modellarini qo‘shdim. 2020–2025 test yillarida B2’da taqqoslangan to‘rtta model orasida U-Net ikkala hududda ham 7 va 30 kunda eng past RMSE’ga ega bo‘ldi; 1 kunda butun hudud modellari anomaliya persistence’dan yomonroq chiqdi. To‘liq natijalar [loyiha sahifasida](/uz/projects/sst-baselines/).
+
 Biror o‘qitiladigan modelni taqqoslashdan oldin, kunlik dengiz sirti harorati (SST) uchun oddiy baselinelardan o‘zib ketish qanchalik qiyinligini bilmoqchi edim. Validatsiya yillarida (2016-2019) ko‘rgan reytingim test yillarida (2020-2025) saqlanmadi. Bu maqola nima o‘zgargani, sababi haqida nimani ayta olishim va nimani ayta olmasligim hamda keyin qo‘shgan kichik LSTM haqida.
 
 Barcha raqamlar [sst-baselines](https://github.com/diyor-ai/sst-baselines) README’sidan va `results/` fayllaridan olingan. Bu baseline va baholash tadqiqoti, operativ prognoz tizimi emas.

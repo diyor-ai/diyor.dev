@@ -3,6 +3,8 @@ title: "When the test years were warmer: what happened to my SST baselines"
 description: "In a baseline and evaluation study of sea surface temperature, methods that relax toward climatology lost their validation-period advantage in the 2020-2025 test years."
 date: 2026-11-07
 ---
+> **Update (Nov 11, 2026):** Since this post I added spatial-context (B1) and whole-region models (B2). On the 2020–2025 test years, the U-Net had the lowest RMSE of the four models compared in B2 at 7 and 30 days in both regions; at 1 day the whole-region models were worse than anomaly persistence. Full results are on the [project page](/projects/sst-baselines/).
+
 I wanted to know how hard simple baselines are to beat for daily sea surface temperature (SST) before comparing any learned model with them. The ranking I saw on the validation years (2016-2019) did not hold on the test years (2020-2025). This post is about what changed, what I can and cannot say about why, and a small LSTM I added afterwards.
 
 All numbers come from the README and the `results/` files of [sst-baselines](https://github.com/diyor-ai/sst-baselines). It is a baseline and evaluation study, not an operational forecast system.
