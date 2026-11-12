@@ -20,7 +20,7 @@ const c = t.contact;
     <li><Icon name="github" /><span class="label">{c.github}</span><a href={GITHUB} rel="me noopener">github.com/diyor-ai</a></li>
     <li><Icon name="linkedin" /><span class="label">{c.linkedin}</span><a href={LINKEDIN} rel="me noopener">linkedin.com/in/muhammaddiyorabdulazimov</a></li>
     <li><Icon name="wechat" /><span class="label">{c.wechatId}</span><span class="mono">{WECHAT_ID}</span></li>
-    {UPWORK && <li><span class="label">{c.upwork}</span><a href={UPWORK} rel="noopener">{UPWORK}</a></li>}
+    {UPWORK && <li><Icon name="briefcase" /><span class="label">{c.upwork}</span><a href={UPWORK} rel="me noopener">upwork.com/freelancers/~01f2416f81e4323d11</a></li>}
   </ul>
   <figure class="qr">
     <Image src={qr} alt={c.qrAlt} width={320} height={320} format="webp" quality={85} densities={[1]} />

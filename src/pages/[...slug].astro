@@ -10,7 +10,7 @@ import Contact from '../views/Contact.astro';
 import Now from '../views/Now.astro';
 import { getT, locales, type Lang } from '../i18n/utils';
 import { getProjects, getPosts } from '../lib/content';
-import { SITE, GITHUB, LINKEDIN } from '../config';
+import { SITE, GITHUB, LINKEDIN, UPWORK } from '../config';
 
 export async function getStaticPaths() {
   const out: any[] = [];
@@ -52,7 +52,7 @@ const meta: Record<string, [string, string]> = {
 const [title, description] = meta[view];
 const jsonLd = view === 'home' ? {
   '@context': 'https://schema.org', '@type': 'Person', name: 'Mukhammaddiyor Abdulazimov', url: SITE,
-  sameAs: [GITHUB, LINKEDIN], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Harbin Engineering University' },
+  sameAs: [GITHUB, LINKEDIN, ...(UPWORK ? [UPWORK] : [])], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Harbin Engineering University' },
   affiliation: { '@type': 'CollegeOrUniversity', name: 'Harbin Engineering University' },
   jobTitle: 'Artificial Intelligence student',
 } : undefined;
